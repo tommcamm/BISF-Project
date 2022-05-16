@@ -4,7 +4,7 @@ Project for the exam of Business Intelligence For Financial Services
 
 ## Considered STOCKS
 
-- TSLA | tesla
+- FB | Meta Platforms, Inc.
 - GOOGL | alphabet inc. aka. google
 - RTX | Raytheon
 - LMT | lockheed martin
