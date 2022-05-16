@@ -12,6 +12,10 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{ {./images/} }
 
 \title{Documentazione di progetto\\ Business Intelligence per i Servizi Finanziari}
 \author{Tommaso Cammelli, 851593}
@@ -31,11 +35,30 @@ Per questo progetto sono stati presi in considerazione 6 titoli azionari, appart
 
 
 
-\section{Some examples to get started}
+\section{Statistiche descrittive}
 
-\subsection{How to create Sections and Subsections}
+\subsection{Settore tecnologico}
 
-Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you've chosen. If you're using Rich Text mode, you can also create new section and subsections via the buttons in the editor toolbar.
+\subsubsection{Rendimenti semplici e composti}
+
+osserva il grafico \ref{fig:rendimenti_composti_tecno}, è importante
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{tecno_rendimenti_semplici_netti.png}
+      \captionof{figure}{Rendimenti semplici netti FB e GOOG}
+      \label{fig:rendimenti_semplici_tecno}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.97\linewidth]{tecno_rendimenti_composti.png}
+      \captionof{figure}{Rendimenti composti FB e GOOG}
+      \label{fig:rendimenti_composti_tecno}
+    \end{minipage}
+    \end{figure}
+
 
 \subsection{How to include Figures}
 
@@ -43,11 +66,6 @@ First you have to upload the image file from your computer using the upload link
 
 Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by. You can find out more about adding images to your documents in this help article on \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{including images on Overleaf}.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{frog.jpg}
-\caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
-\end{figure}
 
 \subsection{How to add Tables}
 
