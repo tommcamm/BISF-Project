@@ -6,7 +6,7 @@
 
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
-\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
 
 % Useful packages
 \usepackage{amsmath}
@@ -15,7 +15,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{listings} % For code blocks
-\usepackage[parfill]{parskip}
+\usepackage[parfill]{parskip} % For avoiding auto indent every new line
 
 \graphicspath{ {./images/} }
 
@@ -40,7 +40,7 @@ Per questo progetto sono stati presi in considerazione 6 titoli azionari, appart
 \subsection{Funzioni utilizzate per download e fusione}
 
 Per il download dei dati da Yahoo! Finance\footnote{\href{https://finance.yahoo.com}{https://finance.yahoo.com}} è stata utilizzata la nota libreria di python
-yfinance\footnote{\href{https://pypi.org/project/yfinance/}{https://pypi.org/project/yfinance/}} dove attraverso la funzione
+yfinance\footnote{Libreria FOSS per download di dati finanziari da Yahoo! finance, \href{https://pypi.org/project/yfinance/}{https://pypi.org/project/yfinance/}} dove attraverso la funzione
 \emph{download} ha permesso il download dei dati di interesse nel periodo rilevante per questo progetto.
 
 \begin{lstlisting}[language=Python]
@@ -72,7 +72,7 @@ dove è rappresentato la variazione di prezzo di tutti gli stock considerati in 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.65\textwidth]{all_stocks_price.png}
+  \includegraphics[width=0.7\textwidth]{all_stocks_price.png}
   \caption{grafico con prezzo degli stock da 18/05/2012 a 30/11/2021}
   \label{fig:all_stocks_price}
 \end{figure}
@@ -82,10 +82,13 @@ fusi in un solo dataframe grazie a pandas.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.65\textwidth]{stocks_combined_first_10.png}
+  \includegraphics[width=0.7\textwidth]{stocks_combined_first_10.png}
   \caption{tabella con prezzo degli stock da 18/05/2012 a 30/11/2021}
   \label{fig:all_stocks_table_10}
 \end{figure}
+
+\textbf{Nota:} Meta Platforms, Inc. (FB) è stata quotata in borsa solo a partire dal 18/05/2012, a causa di ciò i dati aggregati partono
+solo da quella data.
 
 \section{Statistiche descrittive}
 
