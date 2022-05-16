@@ -14,6 +14,8 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{listings} % For code blocks
+\usepackage[parfill]{parskip}
 
 \graphicspath{ {./images/} }
 
@@ -25,6 +27,8 @@
 
 \section{Sommario dei dati utilizzati}
 
+\subsection{Presentazione e descrizione dei titoli selezionati}
+
 Per questo progetto sono stati presi in considerazione 6 titoli azionari, appartenenti a 3 settori diversi:
 
 \begin{itemize}
@@ -33,7 +37,55 @@ Per questo progetto sono stati presi in considerazione 6 titoli azionari, appart
     \item \textbf{Settore bancario}: Bank of America Corporation (BAC), JPMorgan Chase \& Co. (JPM)
 \end{itemize}
 
+\subsection{Funzioni utilizzate per download e fusione}
 
+Per il download dei dati da Yahoo! Finance\footnote{\href{https://finance.yahoo.com}{https://finance.yahoo.com}} è stata utilizzata la nota libreria di python
+yfinance\footnote{\href{https://pypi.org/project/yfinance/}{https://pypi.org/project/yfinance/}} dove attraverso la funzione
+\emph{download} ha permesso il download dei dati di interesse nel periodo rilevante per questo progetto.
+
+\begin{lstlisting}[language=Python]
+  # Esempio di download da Yahoo! Finance dello storico prezzi di FB
+  import yfinance as yf
+
+  fb_df = yf.download('FB', start='2011-11-30', end='2021-11-30')
+\end{lstlisting}
+
+Relativamente alla fusione dei dati scaricati in un unico DataFrame di Pandas\footnote{Libreria per data analysis e manipulation, 
+\href{https://pandas.pydata.org/}{https://pandas.pydata.org/}} è stata utilizzata la funzione \emph{DataFrame()} 
+per creare un nuovo dataframe vuoto, sono stati poi usati i costrutti base di python per popolare il dataframe con i nostri dati di interesse.
+
+\begin{lstlisting}[language=Python]
+  # Esempio di fusione dei dati da due indici scaricati precedentemente
+  import pandas as pd
+
+  adj_close_tot = pd.DataFrame()
+  adj_close_tot["Meta Price"] = fb_df[["Adj Close"]]
+  adj_close_tot["Alphabet Price"] = goog_df[["Adj Close"]]
+\end{lstlisting}
+
+\pagebreak
+
+\subsection{presentazione dei dati}
+
+Un esempio di rappresentazione dei dati ottenuti tramite un grafico lo si può trovare alla figura \ref{fig:all_stocks_price} 
+dove è rappresentato la variazione di prezzo di tutti gli stock considerati in questo progetto\footnote{FB, GOOG, RTX, LMT, BAC, JPM}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.65\textwidth]{all_stocks_price.png}
+  \caption{grafico con prezzo degli stock da 18/05/2012 a 30/11/2021}
+  \label{fig:all_stocks_price}
+\end{figure}
+
+Rappresentiamo alla figura \ref{fig:all_stocks_table_10} le prime 10 righe della tabella che contiene il prezzo combinato di tutti gli stock considerati,
+fusi in un solo dataframe grazie a pandas.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.65\textwidth]{stocks_combined_first_10.png}
+  \caption{tabella con prezzo degli stock da 18/05/2012 a 30/11/2021}
+  \label{fig:all_stocks_table_10}
+\end{figure}
 
 \section{Statistiche descrittive}
 
