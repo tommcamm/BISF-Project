@@ -67,8 +67,9 @@ per creare un nuovo dataframe vuoto, sono stati poi usati i costrutti base di py
 
 \subsection{presentazione dei dati}
 
-Un esempio di rappresentazione dei dati ottenuti tramite un grafico lo si può trovare alla figura \ref{fig:all_stocks_price} 
-dove è rappresentato la variazione di prezzo di tutti gli stock considerati in questo progetto\footnote{FB, GOOG, RTX, LMT, BAC, JPM}.
+Rappresentiamo i dati ottenuti tramite un grafico a linee che si trova alla figura \ref{fig:all_stocks_price} dove 
+si mostra la variazione di prezzo di tutti gli stock considerati in questo progetto\footnote{FB, GOOG, RTX, LMT, BAC, JPM} nel periodo 
+da 30-11-2011 a 30-11-2021.
 
 \begin{figure}[h]
   \centering
@@ -77,8 +78,11 @@ dove è rappresentato la variazione di prezzo di tutti gli stock considerati in 
   \label{fig:all_stocks_price}
 \end{figure}
 
-Rappresentiamo alla figura \ref{fig:all_stocks_table_10} le prime 10 righe della tabella che contiene il prezzo combinato di tutti gli stock considerati,
-fusi in un solo dataframe grazie a pandas.
+Tutti i grafici del progetto sono stati generati utilizzando la libreria di python \emph{matplotlib}\footnote{Libreria per creare visualizzazioni dei dati anche interattive in Python, \href{https://matplotlib.org}{https://matplotlib.org}}
+che tramite apposite funzioni ha permesso la quasi totale personalizzazione dei grafici per semplificare la lettura dei dati.
+
+Rappresentiamo ora alla figura \ref{fig:all_stocks_table_10} le prime 10 righe della tabella che contiene il prezzo combinato di tutti gli stock considerati (stessa tabella utilizzata per il plot del grafico qui sopra), 
+fusi in un solo \emph{DataFrame} grazie a \emph{Pandas}.
 
 \begin{figure}[h]
   \centering
