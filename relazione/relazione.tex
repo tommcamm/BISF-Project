@@ -40,11 +40,13 @@ Per questo progetto sono stati presi in considerazione 6 titoli azionari, appart
 \textbf{Motivazione per scelta dei titoli}
 
 \begin{itemize}
-  \item \textbf{Meta Platforms, Inc. (FB)}: Ho scelto questo titolo in quanto è una delle aziende con la \emph{market capitalization} più alta nel mondo\footnote{pagina web di referenza: \href{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}},
+  \item \textbf{Meta Platforms, Inc. (FB)}: Questo titolo è stato scelto in quanto da parte di una delle aziende con la \emph{market capitalization} più alta nel mondo\footnote{pagina web di referenza: \href{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}},
   e facendo parte del \emph{faang}\footnote{Acronimo dei cinque top stocks americani nel settore tecnologico, \href{https://www.investopedia.com/terms/f/faang-stocks.asp}{https://www.investopedia.com/terms/f/faang-stocks.asp}} ho ritenuto interessante
-  valutare il comportamento di questo titolo durante eventi controversi.
+  valutare il comportamento di questo titolo durante eventi di notevole importanza, come ad esempio lo scandalo di cambridge analytica o il caos durante le elezioni presidenziali americane, si può consultare un articolo interessante a questo 
+  \href{https://finance.yahoo.com/news/facebook-stock-familiar-crisis-cycle-183733316.html}{link}.
 
-  \item \textbf{Alphabet Inc. (GOOG)}: todo
+  \item \textbf{Alphabet Inc. (GOOG)}: Questo titolo insieme a quello precedente fa parte di \emph{faang}\footnotemark[2], è stato scelto in quanto è interessante da confrontare contro FB, sopratutto in momenti di crisi come la crisi finanziaria causata
+  per esempio dal crollo finanziario \cite[paper di riferimento]{MAZUR2021101690}.
   
   \item \textbf{Raytheon Technologies Corporation (RTX)}: todo
   
@@ -70,7 +72,7 @@ yfinance\footnote{Libreria FOSS per download di dati finanziari da Yahoo! financ
 
 Relativamente alla fusione dei dati scaricati in un unico DataFrame di Pandas\footnote{Libreria per data analysis e manipulation, 
 \href{https://pandas.pydata.org/}{https://pandas.pydata.org/}} è stata utilizzata la funzione \emph{DataFrame()} 
-per creare un nuovo dataframe vuoto, sono stati poi usati i costrutti base di python per popolare il dataframe con i nostri dati di interesse.
+per creare un nuovo \emph{DataFrame} vuoto, sono stati poi usati i costrutti base di python per popolare il \emph{DataFrame} con i nostri dati di interesse.
 
 \begin{lstlisting}[language=Python]
   # Esempio di fusione dei dati da due indici scaricati precedentemente
@@ -81,7 +83,7 @@ per creare un nuovo dataframe vuoto, sono stati poi usati i costrutti base di py
   adj_close_tot["Alphabet Price"] = goog_df[["Adj Close"]]
 \end{lstlisting}
 
-\pagebreak
+% pagebreak was here
 
 \subsection{presentazione dei dati}
 
@@ -202,7 +204,7 @@ To change the spell check language, simply open the Overleaf menu at the top lef
 
 \subsection{How to add Citations and a References List}
 
-You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this: \cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
+You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this:. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
 
 If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded account}, you can also import your Mendeley or Zotero library directly as a \verb|.bib| file, via the upload menu in the file-tree.
 
@@ -211,6 +213,7 @@ If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded 
 We hope you find Overleaf useful, and do take a look at our \href{https://www.overleaf.com/learn}{help library} for more tutorials and user guides! Please also let us know if you have any feedback using the Contact Us link at the bottom of the Overleaf menu --- or use the contact form at \url{https://www.overleaf.com/contact}.
 
 \bibliographystyle{alpha}
-\bibliography{sample}
+\bibliography{referenze}
+
 
 \end{document}
