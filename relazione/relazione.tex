@@ -40,22 +40,24 @@ Per questo progetto sono stati presi in considerazione 6 titoli azionari, appart
 \textbf{Motivazione per scelta dei titoli}
 
 \begin{itemize}
-  \item \textbf{Meta Platforms, Inc. (FB)}: Questo titolo è stato scelto in quanto da parte di una delle aziende con la \emph{market capitalization} più alta nel mondo\footnote{pagina web di referenza: \href{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}},
-  e facendo parte del \emph{faang}\footnote{Acronimo dei cinque top stocks americani nel settore tecnologico, \href{https://www.investopedia.com/terms/f/faang-stocks.asp}{https://www.investopedia.com/terms/f/faang-stocks.asp}} ho ritenuto interessante
-  valutare il comportamento di questo titolo durante eventi di notevole importanza, come ad esempio lo scandalo di cambridge analytica o il caos durante le elezioni presidenziali americane, si può consultare un articolo interessante a questo 
-  \href{https://finance.yahoo.com/news/facebook-stock-familiar-crisis-cycle-183733316.html}{link}.
+  \item \textbf{Meta Platforms, Inc. (FB)}: Questo titolo è stato scelto in quanto è  una delle aziende con la \emph{market capitalization} più alta nel mondo\footnote{pagina web di referenza: \href{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}{https://companiesmarketcap.com/tech/largest-tech-companies-by-market-cap/}},
+  e facendo parte del \emph{faang}\footnote{Acronimo dei cinque top stocks americani nel settore tecnologico, \href{https://www.investopedia.com/terms/f/faang-stocks.asp}{https://www.investopedia.com/terms/f/faang-stocks.asp}} ho ritenuto essere un investimento solido.
+  considerando il recente crollo del prezzo potrebbe essere un buon momento per prendere posizioni lunghe sul titolo\footnote{\href{https://finance.yahoo.com/news/good-time-increase-meta-platforms-142109519.html}{https://finance.yahoo.com/news/good-time-increase-meta-platforms-142109519.html}}.
 
-  \item \textbf{Alphabet Inc. (GOOG)}: Questo titolo insieme a quello precedente fa parte di \emph{faang}\footnotemark[2], è stato scelto in quanto è interessante da confrontare contro FB, sopratutto in momenti di crisi come la crisi finanziaria causata
-  per esempio dal crollo finanziario \cite[paper di riferimento]{MAZUR2021101690}.
+  \item \textbf{Alphabet Inc. (GOOG)}: Questo titolo insieme a quello precedente fa parte di \emph{faang}\footnotemark[2], è stato scelto in quanto è interessante da confrontare contro altri titoli del settore tecnologico come FB, sopratutto in momenti critici come la crisi finanziaria causata
+  dall'epidemia di COVID-19, dove GOOG ha subito un crollo del 29\% nel primo trimestre\footnote{articolo riferimento declino, \href{https://www.investopedia.com/alphabet-googl-sells-off-after-revenue-decline-5072988}{https://www.investopedia.com/alphabet-googl-sells-off-after-revenue-decline-5072988}}.
   
-  \item \textbf{Raytheon Technologies Corporation (RTX)}: todo
+  \item \textbf{Raytheon Technologies Corporation (RTX)}: RTX ha mostrato negli anni un trend in salita abbastanza stabile, nonostante il crollo durante la crisi finanziaria del 2020 RTX è riuscito a recuperare il crollo.\footnote{\href{https://www.investopedia.com/raytheon-technologies-drops-then-pops-on-earnings-beat-5074746}{https://www.investopedia.com/raytheon-technologies-drops-then-pops-on-earnings-beat-5074746}}.
   
-  \item \textbf{Lockheed Martin Corporation (LMT)}: todo
+  \item \textbf{Lockheed Martin Corporation (LMT)}: LMT è stata scelta in quanto è fa parte anche lui nella categoria militare e permette di confrontare l'andamento di mercato nel confronto di RTX.
   
-  \item \textbf{Bank of America Corporation (BAC)}: todo
+  \item \textbf{Bank of America Corporation (BAC)}: Come primo titolo finanziario ho scelto BAC in quanto nonostante la volatilità negli ultimi anni a causa dell'epidemia, il titolo ha mostrato un leggero trend di salita negli anni ed il crollo del prezzo potrebbe
+  rivelarsi una opportunità.
   
-  \item \textbf{JPMorgan Chase \& Co. (JPM)}: todo
+  \item \textbf{JPMorgan Chase \& Co. (JPM)}: JPM come per BAC ha risentito molto dalla crisi finanziaria del 2020, negli anni tuttavia ha mostrato un trend di salita più evidente rispetto a BAC, ritengo che potrebbe essere vantaggioso a lungo termine
 \end{itemize}
+
+\pagebreak
 
 \subsection{Funzioni utilizzate per download e fusione}
 
@@ -82,8 +84,6 @@ per creare un nuovo \emph{DataFrame} vuoto, sono stati poi usati i costrutti bas
   adj_close_tot["Meta Price"] = fb_df[["Adj Close"]]
   adj_close_tot["Alphabet Price"] = goog_df[["Adj Close"]]
 \end{lstlisting}
-
-% pagebreak was here
 
 \subsection{presentazione dei dati}
 
@@ -122,7 +122,8 @@ Statistiche descrittive dei due titoli relativi al settore tecnologico FB e GOOG
 
 \subsubsection{Rendimenti semplici e composti}
 
-osserva i due grafici \ref{fig:rendimenti_semplici_tecno} e \ref{fig:rendimenti_compositi_tecno}, sono importanti
+Per i titoli GOOG e FB sono stati calcolati i rendimenti semplici netti (grafico a figura \ref{fig:rendimenti_semplici_tecno}) e i rendimenti compositi (grafico a figura \ref{fig:rendimenti_compositi_tecno}) e posti a confronto
+(si nota una generale correlazione nei rendimenti).
 
 \begin{figure}[h]
     \centering
@@ -138,8 +139,19 @@ osserva i due grafici \ref{fig:rendimenti_semplici_tecno} e \ref{fig:rendimenti_
       \captionof{figure}{Rendimenti compositi FB e GOOG}
       \label{fig:rendimenti_compositi_tecno}
     \end{minipage}
-    \end{figure}
+\end{figure}
 
+\subsubsection{Note sui titoli tecnologici}
+
+Confrontando le serie storiche di GOOG e FB nel grafico a figura \ref{fig:all_stocks_price}, utilizzando la funzione \verb|.corr()| di pandas si mostra un forte correlazione positiva di \verb|0.962272| (figura \ref{fig:corr_tecno})
+tra i due titoli, come dimostrato dai simili rendimenti composti (ad eccezione per alcuni eventi).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{corr_tecno.png}
+  \caption{tabella con correlazione titoli GOOG e FB (metodo di Pearson)}
+  \label{fig:corr_tecno}
+\end{figure}
 
 \subsection{How to include Figures}
 
@@ -214,6 +226,7 @@ We hope you find Overleaf useful, and do take a look at our \href{https://www.ov
 
 \bibliographystyle{alpha}
 \bibliography{referenze}
+\nocite{*}
 
 
 \end{document}
