@@ -16,6 +16,7 @@
 \usepackage{subcaption}
 \usepackage{listings} % For code blocks
 \usepackage[parfill]{parskip} % For avoiding auto indent every new line
+\usepackage{tabto}
 
 \graphicspath{ {./images/} }
 
@@ -63,7 +64,7 @@ Per questo progetto sono stati presi in considerazione 6 titoli azionari, appart
 
 Per il download dei dati da Yahoo! Finance\footnote{\href{https://finance.yahoo.com}{https://finance.yahoo.com}} è stata utilizzata la nota libreria di python
 yfinance\footnote{Libreria FOSS per download di dati finanziari da Yahoo! finance, \href{https://pypi.org/project/yfinance/}{https://pypi.org/project/yfinance/}} dove attraverso la funzione
-\emph{download()} ha permesso di scaricare i dati di interesse nel periodo rilevante per questo progetto.
+\verb|download()| ha permesso di scaricare i dati di interesse nel periodo rilevante per questo progetto.
 
 \begin{lstlisting}[language=Python]
   # Esempio di download da Yahoo! Finance dello storico prezzi di FB
@@ -73,7 +74,7 @@ yfinance\footnote{Libreria FOSS per download di dati finanziari da Yahoo! financ
 \end{lstlisting}
 
 Relativamente alla fusione dei dati scaricati in un unico DataFrame di Pandas\footnote{Libreria per data analysis e manipulation, 
-\href{https://pandas.pydata.org/}{https://pandas.pydata.org/}} è stata utilizzata la funzione \emph{DataFrame()} 
+\href{https://pandas.pydata.org/}{https://pandas.pydata.org/}} è stata utilizzata la funzione \verb|DataFrame()| 
 per creare un nuovo \emph{DataFrame} vuoto, sono stati poi usati i costrutti base di python per popolare il \emph{DataFrame} con i nostri dati di interesse.
 
 \begin{lstlisting}[language=Python]
@@ -114,6 +115,8 @@ fusi in un solo \emph{DataFrame} grazie a \emph{Pandas}.
 \textbf{Nota:} Meta Platforms, Inc. (FB) è stata quotata in borsa solo a partire dal 18/05/2012, a causa di ciò i dati aggregati partono
 solo da quella data.
 
+%%% === Presentazione dei dati ===
+
 \section{Statistiche descrittive}
 
 \subsection{Settore tecnologico}
@@ -144,7 +147,7 @@ Per i titoli GOOG e FB sono stati calcolati i rendimenti semplici netti (grafico
 \subsubsection{Note sui titoli tecnologici}
 
 Confrontando le serie storiche di GOOG e FB nel grafico a figura \ref{fig:all_stocks_price}, utilizzando la funzione \verb|.corr()| di pandas si mostra un forte correlazione positiva di \verb|0.962272| (figura \ref{fig:corr_tecno})
-tra i due titoli, come dimostrato dai simili rendimenti composti (ad eccezione per alcuni eventi).
+tra i due titoli, come dimostrato anche dai simili rendimenti compositi (ad eccezione per alcuni eventi).
 
 \begin{figure}[h]
   \centering
@@ -153,6 +156,53 @@ tra i due titoli, come dimostrato dai simili rendimenti composti (ad eccezione p
   \label{fig:corr_tecno}
 \end{figure}
 
+\pagebreak
+
+\textbf{Note sui rendimenti di Meta (FB)}
+
+Osservando il grafico in figura \ref{fig:rendimenti_semplici_tecno} relativamente ai rendimenti semplici di FB, notiamo \textbf{3} eventi di notevole discostamento dalla media.
+
+Nel primo trimestre del 2012 si nota un significativo crollo, analizzando notizie e articoli si può ricondurre il crollo a scetticismo che c`è stato
+tra gli investitori\footnote{\href{https://money.cnn.com/2012/05/22/markets/facebook-shares/index.htm}{https://money.cnn.com/2012/05/22/markets/facebook-shares/index.htm}} in quanto
+Facebook (ora Meta) all'epoca era stata appena quotata in borsa, il crollo è stato circa del 35\% solo nei primi mesi.
+
+Nel terzo trimestre del 2013 tuttavia viene evidenziato una crescita sostanziale rispetto alla media, nonostante il crollo capitato poco dopo la quotazione in borsa nel 2012,
+a metà anno il prezzo di FB è riuscito a raggiungere di nuovo il prezzo di \emph{IPO}\footnote{Initial Public Offering, \href{https://www.investopedia.com/terms/i/ipo.asp}{https://www.investopedia.com/terms/i/ipo.asp}}
+raggiungendo poi verso il terzo trimestre la quota record del tempo di 50\$, in base a vari 
+articoli\footnote{
+  \href{https://www.reuters.com/article/us-facebook-ipoprice-idUSBRE96T1CI20130730}{https://www.reuters.com/article/us-facebook-ipoprice-idUSBRE96T1CI20130730},
+  
+  \hspace{1.5mm} \href{https://money.cnn.com/2013/09/26/investing/facebook-stock/index.html}{https://money.cnn.com/2013/09/26/investing/facebook-stock/index.html}
+  }
+si evidenzia come la crescita possa essere attribuita dalla introduzione delle pubblicità su dispositivi mobile (precedentemente la pubblicità era mostrata solo da sito web),
+a luglio 2013 facebook ha infatti annunciato che la pubblicità su mobile ha contribuito al 41\% delle loro vendite nel secondo semestre.
+
+Tra il primo ed il secondo trimestre del 2020, come evidenziato dal grafico c'è stato un grande discostamento dalla media, inizialmente molto negativo ma poco dopo molto positivo,
+la caduta inziale del prezzo la si può attribuire alla crisi finanziaria del 2020, scatenata dalla epidemia da 
+covid-19\footnote{
+  \href{https://www.investopedia.com/facebook-stock-crashes-into-bear-market-territory-4800598}{https://www.investopedia.com/facebook-stock-crashes-into-bear-market-territory-4800598}
+}.\\
+Tuttavia grazie alla natura digitale del servizio, dunque non esposta alla epidemia come altre attività e all'annuncio di \emph{Facebook Shops} il prezzo ha velocemente raggiunto il valore pre-crollo arrivando
+addirittura ad un record del tempo (20-05-2020) di 
+\$230.75\footnote{
+  \href{https://www.cnbc.com/2020/05/20/facebook-shares-reach-all-time-high-after-announcing-online-shopping-feature.html}{https://www.cnbc.com/2020/05/20/facebook-shares-reach-all-time-high-after-announcing-online-shopping-feature.html}
+}\\
+
+\textbf{Note sui rendimenti di Alphabet (GOOG)}
+
+Sul titolo GOOG si notano distaccamenti negativi sul rendimento di entità notevolmente inferiore rispetto a FB, tuttavia si hanno distaccamenti positivi più numerosi (il net return raggiunge 0.1 più volte rispetto a FB) anche se spesso non oltre 0.1.
+
+Come per FB, ad aprile 2020 c'è stato un decremento significativo del prezzo (che si è riflettuto sul rendimento) a causa della epidemia da 
+covid-19\footnote{
+  \href{https://www.investopedia.com/alphabet-stock-crashes-into-bear-market-territory-4800600}{https://www.investopedia.com/alphabet-stock-crashes-into-bear-market-territory-4800600}
+}
+, ma sempre per il fatto che Alphabet Inc. fornisce
+prevalentemente servizi digitali il prezzo è ritornato al valore pre-crollo velocemente.
+
+\subsubsection{Grafici sui rendimenti sui titoli tecnologici e dispersione}
+
+
+
 \subsection{How to include Figures}
 
 Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by. You can find out more about adding images to your documents in this help article on \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{including images on Overleaf}.
@@ -160,17 +210,7 @@ Note that your figure will automatically be placed in the most appropriate place
 
 \subsection{How to add Tables}
 
-Use the table and tabular environments for basic tables --- see Table~\ref{tab:widgets}, for example. For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
-
-\begin{table}
-\centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
-\end{tabular}
-\caption{\label{tab:widgets}An example table.}
-\end{table}
+Use the table and tabular environments for basic tables ---, for example. For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
 
 \subsection{How to add Comments and Track Changes}
 
