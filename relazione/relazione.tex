@@ -120,11 +120,9 @@ solo da quella data.
 
 \section{Statistiche descrittive}
 
-\subsection{Settore tecnologico}
+\subsection{Rendimenti semplici e composti}
 
-Statistiche descrittive dei due titoli relativi al settore tecnologico FB e GOOG.
-
-\subsubsection{Rendimenti semplici e composti}
+\subsubsection{Titoli Tecnologici}
 
 Per i titoli GOOG e FB sono stati calcolati i rendimenti semplici netti (grafico a figura \ref{fig:rendimenti_semplici_tecno}) e i rendimenti compositi (grafico a figura \ref{fig:rendimenti_compositi_tecno}) e posti a confronto
 (si nota una generale correlazione nei rendimenti).
@@ -145,7 +143,7 @@ Per i titoli GOOG e FB sono stati calcolati i rendimenti semplici netti (grafico
     \end{minipage}
 \end{figure}
 
-\subsubsection{Note sui titoli tecnologici}
+\textbf{Note sui titoli tecnologici}
 
 Confrontando le serie storiche di GOOG e FB nel grafico a figura \ref{fig:all_stocks_price}, utilizzando la funzione \verb|.corr()| di pandas si mostra un forte correlazione positiva di \verb|0.962272| (figura \ref{fig:corr_tecno})
 tra i due titoli, come dimostrato anche dai simili rendimenti compositi (ad eccezione per alcuni eventi).
@@ -200,13 +198,23 @@ covid-19\footnote{
 , ma sempre per il fatto che Alphabet Inc. fornisce
 prevalentemente servizi digitali il prezzo è ritornato al valore pre-crollo velocemente.
 
-\subsubsection{Grafici sui rendimenti sui titoli tecnologici e dispersione}
+\subsubsection{Titoli Militari}
+
+[TODO]
+
+\subsubsection{Titoli Bancari}
+
+[TODO]
+
+\subsection{Isogrammi sui rendimenti e dispersione}
 
 Per misurare la dispersione sui titoli ci torna utile il concetto di deviazione standard, grazie ad essa si può avere una idea della
  volatilità associata al titolo, un dato utile per effettuare investimenti e/o strategie di 
 trading\footnote{
   \href{https://www.investopedia.com/terms/s/standarddeviation.asp}{https://www.investopedia.com/terms/s/standarddeviation.asp}
 }.\\
+
+\subsubsection{Titoli tecnologici (Meta/Alphabet)}
 
 L'istogramma del rendimento relativo ai titoli GOOG e FB può essere visto a figura \ref{fig:isto_rendimenti_tecno}, mentre la distribuzione dei 
 rendimenti si trova nel grafico in figura \ref{fig:dispersione_tecno}.
@@ -238,34 +246,51 @@ Inoltre é stata calcolata grazie a \emph{Pandas} la Deviazione Standard, dove i
   \label{fig:ds_tecno}
 \end{figure}
 
+\subsubsection{Titoli militari (Raytheon/Lockheed Martin)}
+
+[TODO]
+
+\subsubsection{Titoli bancari (Bank of America/JPMorgan Chase)}
+
+[TODO]
+
 \pagebreak
 
-\subsubsection{Grafici diagnositici a 4 sezioni per i titoli tecnologici}
+\subsection{Grafici diagnositici a 4 sezioni}
 
-Vengono mostrati per i titoli FB e GOOG la serie di 4 grafici diagnostici (Istogramma, kernel density, qq-plot e boxplot).\\
+Vengono mostrati per i titoli considerati la serie di 4 grafici diagnostici (Istogramma, kernel density, qq-plot e boxplot).\\
 Questi grafici rappresentano 4 modi diversi per rappresentare la \textbf{Distribuzione Normale}, fondamentale per studiare la distribuzione sui rendimenti dei titoli.
 
-\textbf{Grafici Diagnostici per Meta Platforms, Inc. (FB)}\\
+\subsubsection{Grafici Diagnostici per Meta Platforms, Inc. (FB)}
+
 Per Meta, possiamo trovare i grafici alla figura \ref{fig:meta_diagn}, si può notare come i rendimenti sono distribuiti normalmente e simmetricamente,
 Si notano inoltre degli outliners: due tra 0.2 e 0.35 e due tra -0.2 e -0.4.
 
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=0.7\textwidth]{meta_diagn.png}
   \caption{Grafici diagnostici per Meta (FB)}
   \label{fig:meta_diagn}
 \end{figure}
 
-\textbf{Grafici Diagnostici per Alphabet Inc. (GOOG)}\\
+\subsubsection{Grafici Diagnostici per Alphabet Inc. (GOOG)}
+
 Per Alphabet, possiamo trovare i grafici alla figura \ref{fig:goog_diagn}, possiamo notare anche qui che i rendimenti sono distribuiti normalmente, con una notevole inclinazione positiva rispetto a FB,
 Anche per questo titolo si nota un outliner: tra -0.20 e -0.25.
 
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=0.7\textwidth]{goog_tecn.png}
   \caption{Grafici diagnostici per Alphabet (GOOG)}
   \label{fig:goog_diagn}
 \end{figure}
+
+\pagebreak
+
+\subsubsection{Statistiche descrittive univariate}
+
+Per ogni serie di rendimenti sono state considerate le seguenti statistiche univariate: media, varianza, deviazione standard, asimmetria e curtosi.
+
 
 \bibliographystyle{alpha}
 \bibliography{referenze}
