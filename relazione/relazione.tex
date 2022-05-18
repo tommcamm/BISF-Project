@@ -17,6 +17,7 @@
 \usepackage{listings} % For code blocks
 \usepackage[parfill]{parskip} % For avoiding auto indent every new line
 \usepackage{tabto}
+\usepackage{wrapfig} % for wrapping text and figures
 
 \graphicspath{ {./images/} }
 
@@ -201,6 +202,12 @@ prevalentemente servizi digitali il prezzo è ritornato al valore pre-crollo vel
 
 \subsubsection{Grafici sui rendimenti sui titoli tecnologici e dispersione}
 
+Per misurare la dispersione sui titoli ci torna utile il concetto di deviazione standard, grazie ad essa si può avere una idea della
+ volatilità associata al titolo, un dato utile per effettuare investimenti e/o strategie di 
+trading\footnote{
+  \href{https://www.investopedia.com/terms/s/standarddeviation.asp}{https://www.investopedia.com/terms/s/standarddeviation.asp}
+}.\\
+
 L'istogramma del rendimento relativo ai titoli GOOG e FB può essere visto a figura \ref{fig:isto_rendimenti_tecno}, mentre la distribuzione dei 
 rendimenti si trova nel grafico in figura \ref{fig:dispersione_tecno}.
 Dai dati si evidenzia come la maggior parte dei rendimenti avviene tra 0.0 e 0.1, oltre al fatto che alphabet nel periodo di interesse ha avuto rendimenti più alti
@@ -231,70 +238,34 @@ Inoltre é stata calcolata grazie a \emph{Pandas} la Deviazione Standard, dove i
   \label{fig:ds_tecno}
 \end{figure}
 
+\pagebreak
+
 \subsubsection{Grafici diagnositici a 4 sezioni per i titoli tecnologici}
 
-Vengono mostrati ora pre i titoli FB e GOOG la serie di 4 grafici diagnostici per ogni titolo.
+Vengono mostrati per i titoli FB e GOOG la serie di 4 grafici diagnostici (Istogramma, kernel density, qq-plot e boxplot).\\
+Questi grafici rappresentano 4 modi diversi per rappresentare la \textbf{Distribuzione Normale}, fondamentale per studiare la distribuzione sui rendimenti dei titoli.
 
-\subsection{How to include Figures}
+\textbf{Grafici Diagnostici per Meta Platforms, Inc. (FB)}\\
+Per Meta, possiamo trovare i grafici alla figura \ref{fig:meta_diagn}, si può notare come i rendimenti sono distribuiti normalmente e simmetricamente,
+Si notano inoltre degli outliners: due tra 0.2 e 0.35 e due tra -0.2 e -0.4.
 
-Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by. You can find out more about adding images to your documents in this help article on \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{including images on Overleaf}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{meta_diagn.png}
+  \caption{Grafici diagnostici per Meta (FB)}
+  \label{fig:meta_diagn}
+\end{figure}
 
+\textbf{Grafici Diagnostici per Alphabet Inc. (GOOG)}\\
+Per Alphabet, possiamo trovare i grafici alla figura \ref{fig:goog_diagn}, possiamo notare anche qui che i rendimenti sono distribuiti normalmente, con una notevole inclinazione positiva rispetto a FB,
+Anche per questo titolo si nota un outliner: tra -0.20 e -0.25.
 
-\subsection{How to add Tables}
-
-Use the table and tabular environments for basic tables ---, for example. For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
-
-\subsection{How to add Comments and Track Changes}
-
-Comments can be added to your project by highlighting some text and clicking ``Add comment'' in the top right of the editor pane. To view existing comments, click on the Review menu in the toolbar above. To reply to a comment, click on the Reply button in the lower right corner of the comment. You can close the Review pane by clicking its name on the toolbar when you're done reviewing for the time being.
-
-Track changes are available on all our \href{https://www.overleaf.com/user/subscription/plans}{premium plans}, and can be toggled on or off using the option at the top of the Review pane. Track changes allow you to keep track of every change made to the document, along with the person making the change. 
-
-\subsection{How to add Lists}
-
-You can make lists with automatic numbering \dots
-
-\begin{enumerate}
-\item Like this,
-\item and like this.
-\end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
-
-\subsection{How to write Mathematics}
-
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i\]
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-
-\subsection{How to change the margins and paper size}
-
-Usually the template you're using will have the page margins and paper size set correctly for that use-case. For example, if you're using a journal article template provided by the journal publisher, that template will be formatted according to their requirements. In these cases, it's best not to alter the margins directly.
-
-If however you're using a more general template, such as this one, and would like to alter the margins, a common way to do so is via the geometry package. You can find the geometry package loaded in the preamble at the top of this example file, and if you'd like to learn more about how to adjust the settings, please visit this help article on \href{https://www.overleaf.com/learn/latex/page_size_and_margins}{page size and margins}.
-
-\subsection{How to change the document language and spell check settings}
-
-Overleaf supports many different languages, including multiple different languages within one document. 
-
-To configure the document language, simply edit the option provided to the babel package in the preamble at the top of this example project. To learn more about the different options, please visit this help article on \href{https://www.overleaf.com/learn/latex/International_language_support}{international language support}.
-
-To change the spell check language, simply open the Overleaf menu at the top left of the editor window, scroll down to the spell check setting, and adjust accordingly.
-
-\subsection{How to add Citations and a References List}
-
-You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this:. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
-
-If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded account}, you can also import your Mendeley or Zotero library directly as a \verb|.bib| file, via the upload menu in the file-tree.
-
-\subsection{Good luck!}
-
-We hope you find Overleaf useful, and do take a look at our \href{https://www.overleaf.com/learn}{help library} for more tutorials and user guides! Please also let us know if you have any feedback using the Contact Us link at the bottom of the Overleaf menu --- or use the contact form at \url{https://www.overleaf.com/contact}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{goog_tecn.png}
+  \caption{Grafici diagnostici per Alphabet (GOOG)}
+  \label{fig:goog_diagn}
+\end{figure}
 
 \bibliographystyle{alpha}
 \bibliography{referenze}
