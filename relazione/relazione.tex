@@ -201,7 +201,39 @@ prevalentemente servizi digitali il prezzo è ritornato al valore pre-crollo vel
 
 \subsubsection{Grafici sui rendimenti sui titoli tecnologici e dispersione}
 
+L'istogramma del rendimento relativo ai titoli GOOG e FB può essere visto a figura \ref{fig:isto_rendimenti_tecno}, mentre la distribuzione dei 
+rendimenti si trova nel grafico in figura \ref{fig:dispersione_tecno}.
+Dai dati si evidenzia come la maggior parte dei rendimenti avviene tra 0.0 e 0.1, oltre al fatto che alphabet nel periodo di interesse ha avuto rendimenti più alti
+rispetto a Meta.
 
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{net_ret_tecno_hist.png}
+    \captionof{figure}{Istogramma rendimenti FB e GOOG}
+    \label{fig:isto_rendimenti_tecno}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{dispersione_tecno.png}
+    \captionof{figure}{Dispersione di FB e GOOG}
+    \label{fig:dispersione_tecno}
+  \end{minipage}
+\end{figure}
+
+Inoltre é stata calcolata grazie a \emph{Pandas} la Deviazione Standard, dove il risultato si può vedere nella tabella a figura \ref{fig:ds_tecno}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{ds_tecno.png}
+  \caption{Deviazione Standard dei titoli FB e GOOG}
+  \label{fig:ds_tecno}
+\end{figure}
+
+\subsubsection{Grafici diagnositici a 4 sezioni per i titoli tecnologici}
+
+Vengono mostrati ora pre i titoli FB e GOOG la serie di 4 grafici diagnostici per ogni titolo.
 
 \subsection{How to include Figures}
 
