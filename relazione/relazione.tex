@@ -201,7 +201,7 @@ prevalentemente servizi digitali il prezzo è ritornato al valore pre-crollo vel
 \subsubsection{Titoli Militari}
 
 Per i titoli RTX e LMT sono stati calcolati i rendimenti semplici netti (grafico a figura \ref{fig:rendimenti_semplici_mil}) e i rendimenti compositi (grafico a figura \ref{fig:rendimenti_compositi_mil}) e posti a confronto
-si nota una generale correlazione nei rendimenti.
+si nota una generale correlazione nei rendimenti, anche se di entità inferiore rispetto a FB/GOOG.
 
 \begin{figure}[h]
   \centering
@@ -219,11 +219,34 @@ si nota una generale correlazione nei rendimenti.
   \end{minipage}
 \end{figure}
 
+Confrontando i titoli RTX e LMT usando sempre il grafico a figura \ref{fig:all_stocks_price} e utilizzando la funzione \verb|.corr()| di pandas
+viene mostrata anche in questo caso una \textbf{forte correlazione positiva} di \verb|0.836831| (figura \ref{fig:corr_mill}).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{corr_mil.png}
+  \caption{tabella con correlazione titoli RTX e LMT (metodo di Pearson)}
+  \label{fig:corr_mill}
+\end{figure}
+
+\textbf{Note sui rendimenti di Raytheon (RTX)}
+
+Osservando il grafico in figura \ref{fig:rendimenti_semplici_mil} relativamente ai rendimenti semplici di RTX, si nota come il nel tempo è
+stato molto fluido, troviamo \textbf{3} eventi notevoli.
+
+
+
+[TODO]\\
+
+\textbf{Note sui rendimenti di Lockheed Martin (LMT)}
+
+[TODO]
+
 \subsubsection{Titoli Bancari}
 
 [TODO]
 
-\subsection{Isogrammi sui rendimenti e dispersione}
+\subsection{Istogrammi sui rendimenti e dispersione}
 
 Per misurare la dispersione sui titoli ci torna utile il concetto di deviazione standard, grazie ad essa si può avere una idea della
  volatilità associata al titolo, un dato utile per effettuare investimenti e/o strategie di 
@@ -304,7 +327,7 @@ Anche per questo titolo si nota un outliner: tra -0.20 e -0.25.
 
 \pagebreak
 
-\subsubsection{Statistiche descrittive univariate}
+\subsection{Statistiche descrittive univariate}
 
 Per ogni serie di rendimenti sono state considerate le seguenti statistiche univariate: media, varianza, deviazione standard, asimmetria e curtosi.
 
