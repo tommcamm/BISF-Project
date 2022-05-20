@@ -356,7 +356,7 @@ trading\footnote{
 
 L'istogramma del rendimento relativo ai titoli GOOG e FB può essere visto a figura \ref{fig:isto_rendimenti_tecno}, mentre la distribuzione dei 
 rendimenti si trova nel grafico in figura \ref{fig:dispersione_tecno}.
-Dai dati si evidenzia come la maggior parte dei rendimenti avviene tra 0.0 e 0.1, oltre al fatto che alphabet nel periodo di interesse ha avuto rendimenti più alti
+Dai dati si evidenzia come la maggior parte dei rendimenti avviene tra \verb|0.0| e \verb|0.1|, oltre al fatto che alphabet nel periodo di interesse ha avuto rendimenti più alti
 rispetto a Meta.
 
 \begin{figure}[h]
@@ -386,11 +386,69 @@ Inoltre é stata calcolata grazie a \emph{Pandas} la Deviazione Standard, dove i
 
 \subsubsection{Titoli militari (Raytheon/Lockheed Martin)}
 
-[TODO]
+L'istogramma del rendimento relativo ai titoli RTX e LMT può essere visto nel grafico a figura \ref{fig:isto_rendimenti_mil}, mentre la distribuzione dei rendimenti
+si trova nel grafico a figura \ref{fig:dispersione_mil}.\\
+Dai dati si evidenzia che i rendimenti si trovano per la maggior parte tra \verb|-0.05| e \verb|0.5|, Lockheed martin ha avuto rendimenti più alti rispetto
+a Raytheon.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{net_ret_mil_hist.png}
+    \captionof{figure}{Istogramma rendimenti RTX e LMT}
+    \label{fig:isto_rendimenti_mil}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{dispersione_mil.png}
+    \captionof{figure}{Dispersione di RTX e LMT}
+    \label{fig:dispersione_mil}
+  \end{minipage}
+\end{figure}
+
+Sempre con \emph{pandas} è stata calcolata la Deviazione Standard, dove il risultato è riportato nella tabella a figura \ref{fig:ds_mil}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{ds_mil.png}
+  \caption{Deviazione Standard dei titoli RTX e LMT}
+  \label{fig:ds_mil}
+\end{figure}
+
+\pagebreak
 
 \subsubsection{Titoli bancari (Bank of America/JPMorgan Chase)}
 
-[TODO]
+L'istogramma per il rendimento dei titoli finanziari BAC e JPM si può vedere nel grafico nella figura \ref{fig:isto_rendimenti_banc}, mentre la distribuzione dei rendimenti
+si può vedere nel grafico in figura \ref{fig:dispersione_banc}.\\
+Dai dati si evidenzia che i rendimenti si trovano per la maggior parte tra \verb|-0.01| e \verb|0.1|, Bank of America ha avuto rendimenti più alti
+rispetto a JPMorgan Chase.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{net_ret_banc_hist.png}
+    \captionof{figure}{Istogramma rendimenti BAC e JPM}
+    \label{fig:isto_rendimenti_banc}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{dispersione_banc.png}
+    \captionof{figure}{Dispersione di BAC e JPM}
+    \label{fig:dispersione_banc}
+  \end{minipage}
+\end{figure}
+
+Con \emph{pandas} è stata calcolata la Deviazione Standard, dove il risultato è nella tabella a figura \ref{fig:ds_banc}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{ds_banc.png}
+  \caption{Deviazione Standard dei titoli BAC e JPM}
+  \label{fig:ds_banc}
+\end{figure}
 
 \pagebreak
 
@@ -402,7 +460,7 @@ Questi grafici rappresentano 4 modi diversi per rappresentare la \textbf{Distrib
 \subsubsection{Grafici Diagnostici per Meta Platforms, Inc. (FB)}
 
 Per Meta, possiamo trovare i grafici alla figura \ref{fig:meta_diagn}, si può notare come i rendimenti sono distribuiti normalmente e simmetricamente,
-Si notano inoltre degli outliners: due tra 0.2 e 0.35 e due tra -0.2 e -0.4.
+Si notano inoltre degli outliners: due tra \verb|0.2| e \verb|0.35| e due tra \verb|-0.2| e \verb|-0.4|.
 
 \begin{figure}[p]
   \centering
@@ -414,13 +472,61 @@ Si notano inoltre degli outliners: due tra 0.2 e 0.35 e due tra -0.2 e -0.4.
 \subsubsection{Grafici Diagnostici per Alphabet Inc. (GOOG)}
 
 Per Alphabet, possiamo trovare i grafici alla figura \ref{fig:goog_diagn}, possiamo notare anche qui che i rendimenti sono distribuiti normalmente, con una notevole inclinazione positiva rispetto a FB,
-Anche per questo titolo si nota un outliner: tra -0.20 e -0.25.
+Anche per questo titolo si nota un outliner: tra \verb|-0.20| e \verb|-0.25|.
 
 \begin{figure}[p]
   \centering
   \includegraphics[width=0.7\textwidth]{goog_tecn.png}
   \caption{Grafici diagnostici per Alphabet (GOOG)}
   \label{fig:goog_diagn}
+\end{figure}
+
+\subsubsection{Grafici Diagnostici per Raytheon Technologies Corporation. (RTX)}
+
+Per Raytheon, i grafici si trovano alla figura \ref{fig:rtx_diagn}, possiamo notare che qui i rendimenti sono distribuiti normalmente e simmetricamente.
+Per questo titolo troviamo un outliner: tra \verb|-0.35| e \verb|-0.4|.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.7\textwidth]{rtx_diagn.png}
+  \caption{Grafici diagnostici per Raytheon (RTX)}
+  \label{fig:rtx_diagn}
+\end{figure}
+
+\subsubsection{Grafici Diagnostici per Lockheed Martin Corporation. (LMT)}
+
+Per Lockheed Martin, i grafici si trovano alla figura \ref{fig:lmt_diagn}, anche qui i rendimenti sono distribuiti normalmente e in maniera simmetrica (la curva è più translata verso destra).
+Per questo titoli abbiamo tre outliner: due tra \verb|-0.05| e \verb|-0.10|, e uno tra \verb|-0.20| e \verb|-0.25|.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.7\textwidth]{lmt_diagn.png}
+  \caption{Grafici diagnostici per Lockheed Martin (LMT)}
+  \label{fig:lmt_diagn}
+\end{figure}
+
+\subsubsection{Grafici Diagnostici per Bank of America. (BAC)}
+
+Per Bank of America, i grafici diagnostici sono alla figura \ref{fig:bac_diagn}, anche qui sono distribuiti generalmente normalmente e simmetricamente.
+Per BAC abbiamo numerosi outliners: tre tra \verb|0.15| e \verb|0.25|, quattro o più tra \verb|-0.1| e \verb|-0.2| e uno tra \verb|-0.35| e \verb|-0.4|.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.7\textwidth]{bac_diagn.png}
+  \caption{Grafici diagnostici per Bank of America (BAC)}
+  \label{fig:bac_diagn}
+\end{figure}
+
+\subsubsection{Grafici Diagnostici per JPMorgan Chase. (JPM)}
+
+Per JPMorgan Chase, troviamo i grafici diagnostici alla figura \ref{fig:jpm_diagn}, la distribuzione è anche qui normale e leggermente inclinata verso destra.
+Per questo titolo abbiamo 3 outliners: due tra \verb|-0.1| e \verb|-0.2| e uno tra \verb|-0.3| e \verb|-0.35|.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.7\textwidth]{jpm_diagn.png}
+  \caption{Grafici diagnostici per JPMorgan Chase (JPM)}
+  \label{fig:jpm_diagn}
 \end{figure}
 
 \pagebreak
