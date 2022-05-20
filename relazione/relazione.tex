@@ -270,7 +270,44 @@ budget alla difesa, anche se il rischio di guerra nucleare dovrebbe evitare un c
 
 \subsubsection{Titoli Bancari}
 
+Per i titoli BAC e JPM sono stati calcolati i rendimenti semplici netti (grafico a figura \ref{fig:rendimenti_semplici_banc}) e i rendimenti composti (grafico a figura \ref{fig:rendimenti_compositi_banc}) e posti a confronto
+anche per questi due titoli si nota una forte correlazione nei rendimenti.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{banc_rendimenti_semplici_netti.png}
+    \captionof{figure}{Rendimenti semplici netti BAC e JPM}
+    \label{fig:rendimenti_semplici_banc}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=.97\linewidth]{banc_rendimenti_composti.png}
+    \captionof{figure}{Rendimenti compositi BAC e JPM}
+    \label{fig:rendimenti_compositi_banc}
+  \end{minipage}
+\end{figure}
+
+Confrontando i titoli BAC e JPM usando il grafico a figura \ref{fig:all_stocks_price} e utilizzando la funzione \verb|.corr()| di pandas
+viene mostrata una \textbf{forte correlazione positiva} di \verb|0.909522| (figura \ref{fig:corr_banc}).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{corr_banc.png}
+  \caption{tabella con correlazione titoli BAC e JPM (metodo di Pearson)}
+  \label{fig:corr_banc}
+\end{figure}
+
+\textbf{Note sui rendimenti di Bank of America (BAC)}
+
+[TODO]\\
+
+\textbf{Note sui rendimenti di JPMorgan Chase (JPM)}
+
 [TODO]
+
+\pagebreak
 
 \subsection{Istogrammi sui rendimenti e dispersione}
 
