@@ -744,19 +744,116 @@ Dalla matrice di correlazione a figura \ref{fig:corr_matrix} notiamo che i titol
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\textwidth]{fb_goog_corr.png}
-  \caption{Correlazione tra FB e GOOG}
-  \label{fig:fb_goog_corr}
+  \begin{minipage}{.4\textwidth}
+    \centering
+    \includegraphics[width=.5\linewidth]{fb_goog_log_return.png}
+    \captionof{figure}{Ritorni logaritmici mensili di FB/GOOG per l'anno 2020}
+    \label{fig:fb_goog_log_return}
+  \end{minipage}%
+  \begin{minipage}{.6\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{fb_goog_corr.png}
+    \captionof{figure}{Correlazione nel tempo di FB/GOOG}
+    \label{fig:fb_goog_corr}
+  \end{minipage}
 \end{figure}
 
 Dal grafico in figura \ref{fig:fb_goog_corr} si evince che c'è sempre stata tra i due titoli una correlazione positiva, dopo
 il 2015 viene mostrato come la correlazione supera \verb|0.5| e per tutta la durata successiva rimane oltre questo valore.
+La tabella a figura \ref{fig:fb_goog_log_return} la forte correlazione in quanto in tutto l'anno i rendimenti hanno avuto lo stesso andamento.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{fb_goog_scatter.png}
+  \caption{Dispersione rendimenti FB/GOOG}
+  \label{fig:fb_goog_disp}
+\end{figure}
 
+Lo scatter plot a figura \ref{fig:fb_goog_corr} evidenza e conferma la forte correlazione tra i due titoli (seppur ci sono alcuni punti lontani dal centro).
+
+\pagebreak
+
+\subsubsection{Titoli militari RTX/LMT}
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.4\textwidth}
+    \centering
+    \includegraphics[width=.5\linewidth]{rtx_lmt_log_return_2017.png}
+    \captionof{figure}{Ritorni logaritmici mensili di RTX/LMT per l'anno 2017}
+    \label{fig:rtx_lmt_log_return_2017}
+  \end{minipage}%
+  \begin{minipage}{.6\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{rtx_lmt_corr.png}
+    \captionof{figure}{Correlazione nel tempo di RTX/LMT}
+    \label{fig:rtx_lmt_corr}
+  \end{minipage}
+\end{figure}
+
+Dal grafico in figura \ref{fig:rtx_lmt_corr} viene mostrato come ci sono stati nel tempo momenti di correlazione alta, e momenti dove c'è stato un crollo nella correlazione, nel dettaglio
+fino al 2016 la correlazione è rimasta stabile tra \verb|0.55| e \verb|0.65|, dal 2016 c'è stato un notevole crollo che ha permesso raggiungere  valori di correlazione inferiori a \verb|0.4|,
+verso il 2018 la correlazione è ritornata ai valori prima del crollo, con addirittura uno spike poco dopo il 2020, presumibilmente a causa delle crisi finanziaria del 2020.
+
+Nella tabella a figura \ref{fig:rtx_lmt_log_return_2017} vengono mostrati i rendimenti logaritmici per l'anno 2017, si può notare come siano
+nettamente meno simili i rendimenti tra i due titoli, a figura \ref{fig:rtx_lmt_log_return_2020} viene mostrato invece i rendimenti per l'anno 2020, in questo caso si nota come i rendimenti sono più "vicini".
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.4\textwidth}
+    \centering
+    \includegraphics[width=.5\linewidth]{rtx_lmt_log_return_2020.png}
+    \captionof{figure}{Ritorni logaritmici mensili di FB/GOOG per l'anno 2020}
+    \label{fig:rtx_lmt_log_return_2020}
+  \end{minipage}%
+  \begin{minipage}{.6\textwidth}
+    \centering
+    \includegraphics[width=.83\linewidth]{rtx_lmt_disp.png}
+    \captionof{figure}{Dispersione rendimenti RTX/GOOG}
+    \label{fig:rtx_lmt_disp}
+  \end{minipage}
+\end{figure}
+
+Lo scatter plot a figura \ref{fig:rtx_lmt_disp} dimostra come la correlazione sia più debole rispetto ai titoli precedenti.
+
+\pagebreak
+
+\subsubsection{Titoli bancari BAC/JPM}
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.4\textwidth}
+    \centering
+    \includegraphics[width=.5\linewidth]{bac_jpm_log_return_2020.png}
+    \captionof{figure}{Ritorni logaritmici mensili di BAC/JPM per l'anno 2020}
+    \label{fig:bac_jpm_log_return_2020}
+  \end{minipage}%
+  \begin{minipage}{.6\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{bac_jpm_corr.png}
+    \captionof{figure}{Correlazione nel tempo di BAC/JPM}
+    \label{fig:bac_jpm_corr}
+  \end{minipage}
+\end{figure}
+
+Dal grafico a figura \ref{fig:bac_jpm_corr} si nota come la correlazione tra i due titoli sia sempre stata piuttosto alta, con valori mai sotto \verb|0.6|.
+Dal 2015 viene evidenziato una notevole crescita nella correlazione che dopo il 2016 non raggiungerà valori inferiori a \verb|0.85|.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{bac_jpm_disp.png}
+  \caption{Dispersione rendimenti BAC/JPM}
+  \label{fig:bac_jpm_disp}
+\end{figure}
+
+Dallo scatter plot mostrato a figura \ref{fig:bac_jpm_disp} viene confermata la forte correlazione.
+
+\pagebreak
+
+\section{Analisi di previsione}
 
 \bibliographystyle{alpha}
 \bibliography{referenze}
 \nocite{*}
-
 
 \end{document}
