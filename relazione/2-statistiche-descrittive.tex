@@ -588,10 +588,43 @@ Basandosi sulle statistiche descrittive univariate presentate qui sopra possiamo
 \pagebreak
 
 %% == SEZ 2.5 ==
+%% Matrice di varianze/covarianze dei rendimenti
+%% data: https://support.minitab.com/en-us/minitab/18/help-and-how-to/modeling-statistics/anova/supporting-topics/anova-statistics/what-is-the-variance-covariance-matrix/
 
 \subsection{Matrice di varianze/covarianze dei rendimenti}
 
-[TODO (spiegazione mat. var/cov)]
+La matrice di varianze/covarianze è una particolare matrice dove sulla diagonale abbiamo la varianza del relativo titoli e nelle altre posizioni abbiamo il valore di covarianza
+della coppia di titoli, questa matrice ci permette quindi di osservare questi due valori in una sola matrice.
+
+\textbf{Covarianza:} La covarianza \(cov\) è una misura che rappresenta come si muove la media di due variabili aleatorie. Nella finanza è utilizzata per determinare la relazione direzionale
+tra i rendimenti di due asset, una covarianza positiva indica che i rendimenti dei due asset si muovono insieme mentre una covarianza negativa indica che si muovono inversamente.
+
+\begin{displaymath}
+  cov(x,y) = \frac{(x_i - x_m) \cdot (y_i - y_m)}{n - 1}
+\end{displaymath}
+
+\textbf{dove}\\
+\(x_i = \text{Rendimento i-esimo del titolo X}\)\\
+\(x_m = \text{La media del titolo X del dataset}\)\\
+\(y_i = \text{Rendimento i-esimo del titolo Y}\)\\
+\(y_m = \text{La media del titolo Y del dataset}\)
+
+\textbf{Varianza:} La varianza \(\sigma^2\) è una misura statistica utilizzata per determinare la distanza dei numeri dalla loro media in un dataset, in finanza è utilizzata
+per determinare la volatilità di un asset.
+
+\begin{displaymath}
+  \sigma^2 = \frac{\sigma(x_i - \overline{x})^2}{n - 1}  
+\end{displaymath}
+
+\begin{displaymath}
+  mat_{\text{var/cov}} = 
+\begin{bmatrix}
+  \sigma^2_1 & cov(1,2) & \cdots & cov(1,j)\\
+  cov(2,1) & \sigma^2_2 & \cdots & cov(2,j)\\
+  \vdots   & \vdots   & \ddots & \vdots\\
+  cov(i,1) & cov(i,2) & \cdots & \sigma^2_i
+\end{bmatrix}
+\end{displaymath}
 
 \begin{figure}[h]
   \centering
@@ -609,6 +642,7 @@ un minor rischio nel portfolio tra questi due titoli.
 
 %% == SEZ 2.6 ==
 %% Matrice di correlazione dei rendimenti 
+%% data: https://www.investopedia.com/terms/c/correlation.asp
 
 \subsection{Matrice di correlazione dei rendimenti}
 
@@ -639,8 +673,6 @@ portfolio.
 
 Dalla matrice di correlazione a figura \ref{fig:corr_matrix} notiamo che i titoli più correlati sono \verb|JPM| e \verb|BAC| con un valore di correlazione pari a
 \verb|0.88|. I titoli meno correlati sono invece \verb|FB| e \verb|LMT| con un valore di correlazione pari a \verb|0.251|.
-
-\pagebreak
 
 \subsection{Grafico sulla correlazione dei titoli nel tempo e scatter plot}
 
