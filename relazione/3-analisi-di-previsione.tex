@@ -43,7 +43,7 @@ Impostando i parametri visti qui sopra possiamo ottenere dei \emph{casi particol
     \item \(\text{ARIMA} (p,0,0)\): modello \(\text{AR} (p)\).
     \item \(\text{ARIMA} (0,0,q)\): modello \(\text{MA} (q)\).
     \item \(\text{ARIMA} (0,1,2)\): modello "smorzato" di 
-    Holt.\footnote[28]{
+    Holt.\footnote{
         \href{https://otexts.com/fpp3/holt.html}{https://otexts.com/fpp3/holt.html}
     }
     \item \(\text{ARIMA} (0,1,1)\): senza costante: modello SES.
@@ -52,5 +52,13 @@ Impostando i parametri visti qui sopra possiamo ottenere dei \emph{casi particol
 
 Una delle più note debolezze del modello ARIMA nel contesto finanziario è la inabilità di catturare il clustering della volatilità
 che si osserva nella maggior parte degli asset finanziari.
+
+Per questo progetto al fine di identificare i parametri migliori \(p, d \text{ e } q \) da applicare è stata utilizzata la libreria 
+\emph{pmdarima}\footnote{
+    \href{http://alkaline-ml.com/pmdarima/1.8.3/about.html}{http://alkaline-ml.com/pmdarima/1.8.3/about.html}
+}, che grazie alla funzione \verb|auto_arima| mediante una ricerca a griglia riesce a trovare valori che minimizzano il valore 
+\verb|AIC|\footnote{
+    Stimatore per gli errori di predizione, \href{https://en.wikipedia.org/wiki/Akaike_information_criterion}{https://en.wikipedia.org/wiki/Akaike\_information\_criterion}
+}.
 
 \subsection{Modello di previsione per Meta (FB)}
