@@ -9,9 +9,24 @@ Per la costruzione del modello di previsione ho deciso di utilizzare il modello 
 Questo modello utilizza i dati delle serie temporali per permettere di capire meglio il dataset e per effettuare predizioni su trend futuri.
 
 Questo sistema è una forma di \emph{analisi di regressione} che calcola la forza di una variabile aleatoria indipendente relativamente ai cambiamenti di altre variabili.
-L'obiettivo di questo modello è di effettuare predizioni sul futuro delle securities esaminando le differenze tra i valori nelle serie invece di utilizzare valori attuali.  
+L'obiettivo di questo modello è di effettuare predizioni sul futuro delle securities esaminando le differenze tra i valori nelle serie temporali invece di utilizzare valori attuali.  
 
-Possiamo evidenziare le componenti fondamentali di ARIMA come:
+Possiamo evidenziare le componenti fondamentali di ARIMA scomponendo il suo acronimo:
 \begin{itemize}
-    \item \emph{Autoregression (AR)}: Si Riferisce ad un modello che mostra una variabile che cambia
-\end{itemize} 
+    \item \emph{Autoregression (AR)}: Si Riferisce ad un modello che mostra una variabile che cambia in base alla regressione
+    del suo passato o dei suoi valori precedenti.
+    \item \emph{Integrated (I)}: Rappresenta la differenziazione di osservazioni grezze per permettere alla serie temporale di diventare
+    stazionaria.
+    \item \emph{Moving average (MA)}: Incorpora la dipendeza tra una osservazione ed l'errore residuo dal modelli di media 
+    mobile applicato alle osservazioni passate.
+\end{itemize}
+
+Nel modello ARIMA ogni componente visto qui sopra funziona come parametro avente una notazione standard, 
+un esempio di notazione standard sarebbe ARIMA con \(p, d\) e \(q\), dove valori interi sostituiscono i parametri
+per indicare la tipologia del modello ARIMA utilizzato. I parametri posso essere definiti come:
+
+\begin{itemize}
+    \item \(p\): Il numero di osservazioni passate nel modello.
+    \item \(d\): Il numero di volte che le osservazioni grezze sono state differenziate, chiamato anche grado di differenziazione.
+    \item \(q\): la dimensione della finestra relativa alla media mobile, chiamato anche ordine della media mobile.
+\end{itemize}

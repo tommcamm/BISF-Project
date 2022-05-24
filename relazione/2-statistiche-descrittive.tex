@@ -337,13 +337,16 @@ Con \emph{pandas} è stata calcolata la Deviazione Standard, dove il risultato �
 
 \subsection{Grafici diagnositici a 4 sezioni}
 
-Vengono mostrati per i titoli considerati la serie di 4 grafici diagnostici (Istogramma, kernel density, qq-plot e boxplot).\\
+Vengono mostrati per i titoli considerati la serie di 4 grafici diagnostici (Istogramma, kernel density, Q-Q plot e boxplot).\\
 Questi grafici rappresentano 4 modi diversi per rappresentare la \textbf{Distribuzione Normale}, fondamentale per studiare la distribuzione sui rendimenti dei titoli.
+
+Questi grafici ci permettono inoltre di identificare gli \textbf{outliers}, osservazioni che sono significativamente differenti dalla maggioranza, è fondamentale prima di lavorare con algoritmi di machine learning identificare tali outliers in quanto possono influenzare i risultati
+portando a risultati incorretti o con bias.
 
 \subsubsection{Grafici Diagnostici per Meta Platforms, Inc. (FB)}
 
 Per Meta, possiamo trovare i grafici alla figura \ref{fig:meta_diagn}, si può notare come i rendimenti sono distribuiti normalmente e simmetricamente,
-Si notano inoltre degli outliners: due tra \verb|0.2| e \verb|0.35| e due tra \verb|-0.2| e \verb|-0.4|.
+Si notano inoltre degli outliers: due tra \verb|0.2| e \verb|0.35| e due tra \verb|-0.2| e \verb|-0.4|.
 
 \begin{figure}[h]
   \centering
@@ -357,7 +360,7 @@ Si notano inoltre degli outliners: due tra \verb|0.2| e \verb|0.35| e due tra \v
 \subsubsection{Grafici Diagnostici per Alphabet Inc. (GOOG)}
 
 Per Alphabet, possiamo trovare i grafici alla figura \ref{fig:goog_diagn}, possiamo notare anche qui che i rendimenti sono distribuiti normalmente, con una notevole inclinazione positiva rispetto a FB,
-Anche per questo titolo si nota un outliner: tra \verb|-0.20| e \verb|-0.25|.
+Anche per questo titolo si nota un outliers: tra \verb|-0.20| e \verb|-0.25|.
 
 \vspace{3cm}
 
@@ -373,7 +376,7 @@ Anche per questo titolo si nota un outliner: tra \verb|-0.20| e \verb|-0.25|.
 \subsubsection{Grafici Diagnostici per Raytheon Technologies Corporation. (RTX)}
 
 Per Raytheon, i grafici si trovano alla figura \ref{fig:rtx_diagn}, possiamo notare che qui i rendimenti sono distribuiti normalmente e simmetricamente.
-Per questo titolo troviamo un outliner: tra \verb|-0.35| e \verb|-0.4|.
+Per questo titolo troviamo un outliers: tra \verb|-0.35| e \verb|-0.4|.
 
 \vspace{3cm}
 
@@ -389,7 +392,7 @@ Per questo titolo troviamo un outliner: tra \verb|-0.35| e \verb|-0.4|.
 \subsubsection{Grafici Diagnostici per Lockheed Martin Corporation. (LMT)}
 
 Per Lockheed Martin, i grafici si trovano alla figura \ref{fig:lmt_diagn}, anche qui i rendimenti sono distribuiti normalmente e in maniera simmetrica (la curva è più translata verso destra).
-Per questo titoli abbiamo tre outliner: due tra \verb|-0.05| e \verb|-0.10|, e uno tra \verb|-0.20| e \verb|-0.25|.
+Per questo titoli abbiamo tre outliers: due tra \verb|-0.05| e \verb|-0.10|, e uno tra \verb|-0.20| e \verb|-0.25|.
 
 \vspace{3cm}
 
@@ -405,7 +408,7 @@ Per questo titoli abbiamo tre outliner: due tra \verb|-0.05| e \verb|-0.10|, e u
 \subsubsection{Grafici Diagnostici per Bank of America. (BAC)}
 
 Per Bank of America, i grafici diagnostici sono alla figura \ref{fig:bac_diagn}, anche qui sono distribuiti generalmente normalmente e simmetricamente.
-Per BAC abbiamo numerosi outliners: tre tra \verb|0.15| e \verb|0.25|, quattro o più tra \verb|-0.1| e \verb|-0.2| e uno tra \verb|-0.35| e \verb|-0.4|.
+Per BAC abbiamo numerosi outliers: tre tra \verb|0.15| e \verb|0.25|, quattro o più tra \verb|-0.1| e \verb|-0.2| e uno tra \verb|-0.35| e \verb|-0.4|.
 
 \vspace{3cm}
 
@@ -421,7 +424,7 @@ Per BAC abbiamo numerosi outliners: tre tra \verb|0.15| e \verb|0.25|, quattro o
 \subsubsection{Grafici Diagnostici per JPMorgan Chase. (JPM)}
 
 Per JPMorgan Chase, troviamo i grafici diagnostici alla figura \ref{fig:jpm_diagn}, la distribuzione è anche qui normale e leggermente inclinata verso destra.
-Per questo titolo abbiamo 3 outliners: due tra \verb|-0.1| e \verb|-0.2| e uno tra \verb|-0.3| e \verb|-0.35|.
+Per questo titolo abbiamo 3 outliers: due tra \verb|-0.1| e \verb|-0.2| e uno tra \verb|-0.3| e \verb|-0.35|.
 
 \vspace{3cm}
 
