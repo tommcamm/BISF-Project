@@ -5,17 +5,15 @@
 
 \subsection{Rendimenti semplici e composti}
 
-Dato che il prezzo degli asset spesso non è stazionario (media e varianza cambia nel tempo), ci viene comodo trasformare i prezzi in rendimenti per cercare
+Dato che il prezzo degli asset spesso non è \emph{stazionario} (media e varianza cambia nel tempo), ci viene comodo trasformare i prezzi in rendimenti per cercare
 di rendere la serie temporale stazionaria (la proprietà desiderata per la modellazione statistica).
-
-
 
 \subsubsection{Titoli Tecnologici}
 
 Per i titoli GOOG e FB sono stati calcolati i rendimenti semplici netti (grafico a figura \ref{fig:rendimenti_semplici_tecno}) e i rendimenti compositi (grafico a figura \ref{fig:rendimenti_compositi_tecno}) e posti a confronto
 si nota una generale correlazione nei rendimenti.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \begin{minipage}{.5\textwidth}
       \centering
@@ -36,7 +34,7 @@ si nota una generale correlazione nei rendimenti.
 Confrontando le serie storiche di GOOG e FB nel grafico a figura \ref{fig:all_stocks_price}, utilizzando la funzione \verb|.corr()| di pandas si mostra un forte correlazione positiva di \verb|0.962272| (figura \ref{fig:corr_tecno})
 tra i due titoli, come dimostrato anche dai simili rendimenti compositi (ad eccezione per alcuni eventi).
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.4\textwidth]{corr_tecno.png}
   \caption{tabella con correlazione titoli GOOG e FB (metodo di Pearson)}
@@ -91,7 +89,7 @@ prevalentemente servizi digitali il prezzo è ritornato al valore pre-crollo vel
 Per i titoli RTX e LMT sono stati calcolati i rendimenti semplici netti (grafico a figura \ref{fig:rendimenti_semplici_mil}) e i rendimenti compositi (grafico a figura \ref{fig:rendimenti_compositi_mil}) e posti a confronto
 si nota una generale correlazione nei rendimenti, anche se di entità inferiore rispetto a FB/GOOG.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -110,7 +108,7 @@ si nota una generale correlazione nei rendimenti, anche se di entità inferiore 
 Confrontando i titoli RTX e LMT usando sempre il grafico a figura \ref{fig:all_stocks_price} e utilizzando la funzione \verb|.corr()| di pandas
 viene mostrata anche in questo caso una \textbf{forte correlazione positiva} di \verb|0.836831| (figura \ref{fig:corr_mill}).
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.4\textwidth]{corr_mil.png}
   \caption{tabella con correlazione titoli RTX e LMT (metodo di Pearson)}
@@ -161,7 +159,7 @@ budget alla difesa, anche se il rischio di guerra nucleare dovrebbe evitare un c
 Per i titoli BAC e JPM sono stati calcolati i rendimenti semplici netti (grafico a figura \ref{fig:rendimenti_semplici_banc}) e i rendimenti composti (grafico a figura \ref{fig:rendimenti_compositi_banc}) e posti a confronto
 anche per questi due titoli si nota una forte correlazione nei rendimenti.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -180,7 +178,7 @@ anche per questi due titoli si nota una forte correlazione nei rendimenti.
 Confrontando i titoli BAC e JPM usando il grafico a figura \ref{fig:all_stocks_price} e utilizzando la funzione \verb|.corr()| di pandas
 viene mostrata una \textbf{forte correlazione positiva} di \verb|0.909522| (figura \ref{fig:corr_banc}).
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.4\textwidth]{corr_banc.png}
   \caption{tabella con correlazione titoli BAC e JPM (metodo di Pearson)}
@@ -247,7 +245,7 @@ rendimenti si trova nel grafico in figura \ref{fig:dispersione_tecno}.
 Dai dati si evidenzia come la maggior parte dei rendimenti avviene tra \verb|0.0| e \verb|0.1|, oltre al fatto che alphabet nel periodo di interesse ha avuto rendimenti più alti
 rispetto a Meta.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -265,7 +263,7 @@ rispetto a Meta.
 
 Inoltre é stata calcolata grazie a \emph{Pandas} la Deviazione Standard, dove il risultato si può vedere nella tabella a figura \ref{fig:ds_tecno}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.4\textwidth]{ds_tecno.png}
   \caption{Deviazione Standard dei titoli FB e GOOG}
@@ -279,7 +277,7 @@ si trova nel grafico a figura \ref{fig:dispersione_mil}.\\
 Dai dati si evidenzia che i rendimenti si trovano per la maggior parte tra \verb|-0.05| e \verb|0.5|, Lockheed martin ha avuto rendimenti più alti rispetto
 a Raytheon.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -297,7 +295,7 @@ a Raytheon.
 
 Sempre con \emph{pandas} è stata calcolata la Deviazione Standard, dove il risultato è riportato nella tabella a figura \ref{fig:ds_mil}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.4\textwidth]{ds_mil.png}
   \caption{Deviazione Standard dei titoli RTX e LMT}
@@ -313,7 +311,7 @@ si può vedere nel grafico in figura \ref{fig:dispersione_banc}.\\
 Dai dati si evidenzia che i rendimenti si trovano per la maggior parte tra \verb|-0.01| e \verb|0.1|, Bank of America ha avuto rendimenti più alti
 rispetto a JPMorgan Chase.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -331,7 +329,7 @@ rispetto a JPMorgan Chase.
 
 Con \emph{pandas} è stata calcolata la Deviazione Standard, dove il risultato è nella tabella a figura \ref{fig:ds_banc}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.4\textwidth]{ds_banc.png}
   \caption{Deviazione Standard dei titoli BAC e JPM}
@@ -353,7 +351,7 @@ portando a risultati incorretti o con bias.
 Per Meta, possiamo trovare i grafici alla figura \ref{fig:meta_diagn}, si può notare come i rendimenti sono distribuiti normalmente e simmetricamente,
 Si notano inoltre degli outliers: due tra \verb|0.2| e \verb|0.35| e due tra \verb|-0.2| e \verb|-0.4|.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{meta_diagn.png}
   \caption{Grafici diagnostici per Meta (FB)}
@@ -369,7 +367,7 @@ Anche per questo titolo si nota un outliers: tra \verb|-0.20| e \verb|-0.25|.
 
 \vspace{3cm}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{goog_tecn.png}
   \caption{Grafici diagnostici per Alphabet (GOOG)}
@@ -385,7 +383,7 @@ Per questo titolo troviamo un outliers: tra \verb|-0.35| e \verb|-0.4|.
 
 \vspace{3cm}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{rtx_diagn.png}
   \caption{Grafici diagnostici per Raytheon (RTX)}
@@ -401,7 +399,7 @@ Per questo titoli abbiamo tre outliers: due tra \verb|-0.05| e \verb|-0.10|, e u
 
 \vspace{3cm}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{lmt_diagn.png}
   \caption{Grafici diagnostici per Lockheed Martin (LMT)}
@@ -417,7 +415,7 @@ Per BAC abbiamo numerosi outliers: tre tra \verb|0.15| e \verb|0.25|, quattro o 
 
 \vspace{3cm}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{bac_diagn.png}
   \caption{Grafici diagnostici per Bank of America (BAC)}
@@ -433,7 +431,7 @@ Per questo titolo abbiamo 3 outliers: due tra \verb|-0.1| e \verb|-0.2| e uno tr
 
 \vspace{3cm}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{jpm_diagn.png}
   \caption{Grafici diagnostici per JPMorgan Chase (JPM)}
@@ -452,7 +450,7 @@ Tali statistiche univariate servono per [TODO]
 
 Per Meta identifichiamo una volatilità del \verb|36.44|\%, i grafici e la tabella sono a figura \ref{fig:fb_stats} e \ref{fig:fb_vol}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -473,7 +471,7 @@ Per Meta identifichiamo una volatilità del \verb|36.44|\%, i grafici e la tabel
 
 Per Alphabet identifichiamo una volatilità del \verb|25.11|\%, i grafici e la tabella sono a figura \ref{fig:goog_stats} e \ref{fig:goog_vol}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -496,7 +494,7 @@ Per Alphabet identifichiamo una volatilità del \verb|25.11|\%, i grafici e la t
 
 Per Raytheon identifichiamo una volatilità del \verb|25.49|\%, i grafici e la tabella sono a figura \ref{fig:rtx_stats} e \ref{fig:rtx_vol}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -517,7 +515,7 @@ Per Raytheon identifichiamo una volatilità del \verb|25.49|\%, i grafici e la t
 
 Per Lockheed Martin identifichiamo una volatilità del \verb|21.1|\%, i grafici e la tabella sono a figura \ref{fig:lmt_stats} e \ref{fig:lmt_vol}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -540,7 +538,7 @@ Per Lockheed Martin identifichiamo una volatilità del \verb|21.1|\%, i grafici 
 
 Per Bank of America identifichiamo una volatilità del \verb|31.74|\%, i grafici e la tabella sono a figura \ref{fig:bac_stats} e \ref{fig:bac_vol}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -561,7 +559,7 @@ Per Bank of America identifichiamo una volatilità del \verb|31.74|\%, i grafici
 
 Per JPMorgan  Chase identifichiamo una volatilità del \verb|27.04|\%, i grafici e la tabella sono a figura \ref{fig:jpm_stats} e \ref{fig:jpm_vol}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
@@ -634,7 +632,7 @@ per determinare la volatilità di un asset.
 \end{bmatrix}
 \end{displaymath}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.6\textwidth]{var_cov_matrix.png}
   \caption{Matrice di Varianza/Covarianza su tutti i titoli}
@@ -672,7 +670,7 @@ Il valore massimo è \verb|1.0| mentre quello minimo è \verb|-1.0|, quando ci a
 Nel caso dei titoli finanziari la correlazione è un valore importante in quanto ci permette di effettuare predizioni sui trend futuri e quindi gestire il rischio del nostro
 portfolio.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.6\textwidth]{corr_matrix.png}
   \caption{Matrice di correlazione sui rendimenti}
@@ -686,7 +684,7 @@ Dalla matrice di correlazione a figura \ref{fig:corr_matrix} notiamo che i titol
 
 \subsubsection{Titoli tecnologici FB/GOOG}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.4\textwidth}
     \centering
@@ -706,7 +704,7 @@ Dal grafico in figura \ref{fig:fb_goog_corr} si evince che c'è sempre stata tra
 il 2015 viene mostrato come la correlazione supera \verb|0.5| e per tutta la durata successiva rimane oltre questo valore.
 La tabella a figura \ref{fig:fb_goog_log_return} la forte correlazione in quanto in tutto l'anno i rendimenti hanno avuto lo stesso andamento.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.6\textwidth]{fb_goog_scatter.png}
   \caption{Dispersione rendimenti FB/GOOG}
@@ -719,7 +717,7 @@ Lo scatter plot a figura \ref{fig:fb_goog_corr} evidenza e conferma la forte cor
 
 \subsubsection{Titoli militari RTX/LMT}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.4\textwidth}
     \centering
@@ -742,7 +740,7 @@ verso il 2018 la correlazione è ritornata ai valori prima del crollo, con addir
 Nella tabella a figura \ref{fig:rtx_lmt_log_return_2017} vengono mostrati i rendimenti logaritmici per l'anno 2017, si può notare come siano
 nettamente meno simili i rendimenti tra i due titoli, a figura \ref{fig:rtx_lmt_log_return_2020} viene mostrato invece i rendimenti per l'anno 2020, in questo caso si nota come i rendimenti sono più "vicini".
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.4\textwidth}
     \centering
@@ -764,7 +762,7 @@ Lo scatter plot a figura \ref{fig:rtx_lmt_disp} dimostra come la correlazione si
 
 \subsubsection{Titoli bancari BAC/JPM}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{minipage}{.4\textwidth}
     \centering
@@ -783,7 +781,7 @@ Lo scatter plot a figura \ref{fig:rtx_lmt_disp} dimostra come la correlazione si
 Dal grafico a figura \ref{fig:bac_jpm_corr} si nota come la correlazione tra i due titoli sia sempre stata piuttosto alta, con valori mai sotto \verb|0.6|.
 Dal 2015 viene evidenziato una notevole crescita nella correlazione che dopo il 2016 non raggiungerà valori inferiori a \verb|0.85|.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.6\textwidth]{bac_jpm_disp.png}
   \caption{Dispersione rendimenti BAC/JPM}

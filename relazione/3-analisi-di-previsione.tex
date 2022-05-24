@@ -30,3 +30,27 @@ per indicare la tipologia del modello ARIMA utilizzato. I parametri posso essere
     \item \(d\): Il numero di volte che le osservazioni grezze sono state differenziate, chiamato anche grado di differenziazione.
     \item \(q\): la dimensione della finestra relativa alla media mobile, chiamato anche ordine della media mobile.
 \end{itemize}
+
+Impostando i parametri visti qui sopra possiamo ottenere dei \emph{casi particolari}, utili per le analisi:
+
+\begin{itemize}
+    \item \(\text{ARIMA} (0,0,0)\): Rumore bianco.
+    \item \(\text{ARIMA} (0,1,0)\) senza costante: Passeggiata 
+    aleatoria\footnote{
+        Serie con passi in direzioni casuali, \href{https://it.wikipedia.org/wiki/Passeggiata_aleatoria}{https://it.wikipedia.org/wiki/Passeggiata\_aleatoria}
+    }.
+    \item \(\text{ARIMA} (p,0,q)\): \(\text{ARMA} (p,q)\).
+    \item \(\text{ARIMA} (p,0,0)\): modello \(\text{AR} (p)\).
+    \item \(\text{ARIMA} (0,0,q)\): modello \(\text{MA} (q)\).
+    \item \(\text{ARIMA} (0,1,2)\): modello "smorzato" di 
+    Holt.\footnote[28]{
+        \href{https://otexts.com/fpp3/holt.html}{https://otexts.com/fpp3/holt.html}
+    }
+    \item \(\text{ARIMA} (0,1,1)\): senza costante: modello SES.
+    \item \(\text{ARIMA} (0,2,2)\): metodo lineare di Holt\footnotemark[28], con errori aggiuntivi.
+\end{itemize}
+
+Una delle più note debolezze del modello ARIMA nel contesto finanziario è la inabilità di catturare il clustering della volatilità
+che si osserva nella maggior parte degli asset finanziari.
+
+\subsection{Modello di previsione per Meta (FB)}
