@@ -19,12 +19,27 @@ superiore/inferiore a $K$ volte (tipicamente 2) la deviazione standard mobile so
 
 Per la strategia di trading scelta è stata impostata come finestra 20 giorni e come fattore di deviazione $2$.
 
+La strategia prevede si creare un segnale di \emph{buy} nel caso di crossover da parte del prezzo della banda inferiore,
+per quanto riguarda invece il segnale \emph{sell} ci deve essere un crossover nella banda superiore.
+
+Di seguito il codice per la impostazione dei signal:
+
+\begin{lstlisting}[language=Python]
+    # Impostazione del buy signal
+    self.buy_signal = bt.ind.CrossOver(self.datas[0],
+                                       self.b_band.lines.bot)
+    # Impostazione del sell signal
+    self.sell_signal = bt.ind.CrossOver(self.datas[0],
+                                        self.b_band.lines.top)
+\end{lstlisting}
+
 \pagebreak
 
 \subsection{Backtesting su titolo Meta (FB)}
 
 Per effettuare il backtesting della strategia scelta, è stato preso in considerazione il titolo Meta (FB) nell'anno
-2020, si può trovare il grafico a pagina \ref{fig:fb_backtest}.
+2020, si può trovare il grafico a figura \ref{fig:fb_backtest}, come valore iniziale del portfolio sono stati impostati
+$10000\$$ e per rendere i dati più reali è stata impostata anche una percentuale di commissione pari a $0.001\%$.
 
 \begin{figure}[ht]
     \centering
@@ -35,14 +50,14 @@ Per effettuare il backtesting della strategia scelta, è stato preso in consider
 
 \begin{figure}[ht]
     \centering
-    \begin{minipage}{.6\textwidth}
+    \begin{minipage}{.5\textwidth}
         \centering
-        \vspace{1.27cm}
-        \includegraphics[width=.8\linewidth]{fb_backtrack_buy_sell.png}
+        \vspace{2.35cm}
+        \includegraphics[width=.9\linewidth]{fb_backtrack_buy_sell.png}
         \captionof{figure}{backtrader log for FB}
         \label{fig:fb_backtr_log}
     \end{minipage}%
-    \begin{minipage}{.4\textwidth}
+    \begin{minipage}{.5\textwidth}
         \centering
         \includegraphics[width=1\linewidth]{fb_backtrack_ret.png}
         \captionof{figure}{Backtesting portfolio returns}
@@ -51,4 +66,11 @@ Per effettuare il backtesting della strategia scelta, è stato preso in consider
 \end{figure}
 
 Dai log di \verb|backtrader| a figura \ref{fig:fb_backtr_log} si può vedere come la strategia è riuscita ad avere un profitto,
-passando da $10000.00\$$ a $10682,94\$$ marcando un profitto di $682,94\$$ nel corso di un anno.
+passando da $10000.00\$$ a $10682,94\$$ marcando un profitto di $682,94\$$ nel corso di un anno.\\
+Analizzando i dati tecnici possiamo osservare un rendimento annuale/normalizzato pari al $7.47\%$.
+
+Dal backtest è evidente come la strategia sia lontana dall'essere perfetta, dai due grafici presentati qui sopra si nota come nel
+primo \emph{sell} ci sia stata una perdita sul valore del portfolio, al secondo \emph{sell} tuttavia la strategia è riuscita ad ottenere
+un significativo rendimento che ha coperto la perdita del primo \emph{sell}.
+
+\pagebreak
