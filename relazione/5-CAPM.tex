@@ -1,0 +1,54 @@
+%%% CAPITOLO 5
+%%% Capital Asset Pricin Model - CAPM - Valutazione del rischio
+\section{Capital Asset Pricing Model - CAPM}
+
+Il CAPM (\textbf{C}apital \textbf{A}sset \textbf{P}ricing \textbf{M}odel) è un modello che rappresenta la relazione tra 
+i rendimenti aspettati di un indice rischioso ed il rischio di mercato (chiamato anche rischio sistematico).
+
+Possiamo rappresentare il CAPM mediante la equazione:
+
+\begin{displaymath}
+    E(r_i) = r_f + \beta_i (E(r_m) - r_f)
+\end{displaymath}
+
+\textbf{dove}\\
+\(E(r_i) = \text{Denota il rendimento aspettato dell'asset } i\)\\
+\(r_f = \text{ratio risk-free}\)\\
+\(E(r_m) = \text{Rendimento aspettato del mercato}\)\\
+\(\beta = \text{coefficiente beta}\)
+
+\subsection{Calcolo dell'indice beta}
+
+L'indice beta si può interpretare come il livello di sensitività dei rendimenti di un asset relativamente al mercato.
+
+\begin{itemize}
+    \item \(\text{beta} \le -1\): L'asset si muove nella direzione opposta al benchmark e in un ammontare superiore rispetto al negativo del benchmark.
+    \item \(-1 < \text{beta} < 0\): L'asset si muove nella direzione opposta al benchmark.
+    \item \(\text{beta} = 0\): Non esiste correlazione tra il movimento del prezzo dell'asset e il benchmark di mercato.
+    \item \(0 < \text{beta} < 1\): L'asset si muove nella stessa direzione del mercato, ma con un ammontare inferiore. (per esempio uno stock di una compagnia che non è molto suscettibile a fluttuazioni giornaliere).
+    \item \(\text{beta} = 1\): L'asset ed il mercato si muovono nella stessa direzione e con lo stesso ammontare.
+    \item \(\text{beta} \ge 1\): L'asset si muove nella stessa direzione del mercato, ma l'ammontare è maggiore (per esempio nel caso di stock che sono molto suscettibili a cambiamenti giornalieri nelle notizie di mercato). 
+\end{itemize}
+
+La equazione del CAPM può essere modificata per ottenere la formula di calcolo per beta
+
+\begin{displaymath}
+    \beta = \frac{cov(R_i,R_m)}{var(R_m)}
+\end{displaymath}
+
+Nel calcolo di beta per tutti i titoli considerati in questo progetto verrà considerato l'indice \verb|S&P 500| (\verb|^GSPC|).
+
+Mediante il metodo delle covarianze l'indice beta per ogni titolo è:
+\begin{itemize}
+    \item Meta (FB): $1.1146$
+    \item Alphabet (GOOG): $1.0138$
+    \item Raytheon (RTX): $1.3118$
+    \item Lockheed Martin(LMT): $0.835$
+    \item Bank of America(BAC): $1.5124$
+    \item JPMorgan Chase (JPM): $1.2579$
+\end{itemize}
+
+\pagebreak
+
+\subsection{Calcolo esposizione con Fama-French}
+
