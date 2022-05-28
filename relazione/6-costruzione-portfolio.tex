@@ -50,12 +50,45 @@ La composizione del portafoglio sub-ottimale con il rendimento più alto la è l
     \label{fig:pf_optimal_rd}
 \end{figure}
 
-\textbf{Utilizzando i dati di previsione}
+\textbf{Utilizzando i dati di previsione (portfolio di previsione)}
 
 Applichiamo le simulazioni di Monte Carlo ai dati di previsione identificati nel capitolo 3 (su un periodo di 108 mesi).
 
 La ripartizione della origine dei dati è la seguente:
 \begin{itemize}
     \item Primi 80 mesi: Dati storici
-    \item Dal mese 81 a 108: Dati di predizione
+    \item Dal mese 81 a 108: Dati di previsione
 \end{itemize}
+
+Dalle simulazioni usando oltre ai dati storici quelli di previsione otteniamo una dispersione dei portafogli notevolmente inferiore, a figura \ref{fig:prev_monte_carlo_1}
+abbiamo i portafogli con la frontiera di efficienza evidenziata mentre a figura \ref{fig:prev_monte_carlo_2} vengono evidenziati come per il precedente grafico i due portafogli tale
+per cui uno ha il rendimento più alto ed il secondo ha la volatilità più bassa.
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=1\textwidth]{portfolio_monte_carlo_prev_1.png}
+    \caption{Grafico con tutti i portafogli generati da Monte Carlo usando dati di previsione}
+    \label{fig:prev_monte_carlo_1}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=1\textwidth]{portfolio_monte_carlo_prev_2.png}
+    \caption{Composizione con pesi del portafoglio sub-ottimale con rendimento più alto usando i dati di previsione}
+    \label{fig:prev_monte_carlo_2}
+\end{figure}
+
+\pagebreak
+
+La composizione del portafoglio sub-ottimale con il rendimento più alto costituita al mese 80 con dati di previsione per
+i successivi 27 mesi è la seguente (figura \ref{fig:pf_optimal_pr}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\textwidth]{portfolio_optimal_pr.png}
+    \caption{Composizione con pesi del portafoglio sub-ottimale con rendimento più alto usando i dati di previsione}
+    \label{fig:pf_optimal_pr}
+\end{figure}
+
+Si può notare come l'utilizzo dei dati di regressione del modello \verb|ARIMA| abbia reso il valore di volatilità
+notevolmente inferiore rispetto al portafoglio precedente a figura \ref{fig:pf_optimal_rd}.
