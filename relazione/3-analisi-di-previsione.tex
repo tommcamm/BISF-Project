@@ -264,3 +264,22 @@ nell'intervallo di confidenza (in maniera simile a BAC).
 \end{figure}
 
 \pagebreak
+
+\subsection{Extra: Forecasting usando tecniche Deep Learning (MLP)}
+
+Nelle sezioni qui sopra è stata ottenuta una previsione sul prezzo mediante modelli statistici, in questa sezione
+per il titolo FB viene fatta un previsione con il sistema \textbf{MLP} (\textbf{M}ulti\textbf{l}ayer \textbf{p}erceptrons)
+e verrà messa a confronto con la previsione ottenuta tramite modello \verb|ARIMA| del punto 3.1.
+
+I Multilayer perceptrons sono una delle architetture base dei neural networks, sono composti da tre componenti:
+\begin{itemize}
+    \item \textbf{input layer}: vettore di \emph{features}.
+    \item \textbf{hidden layers}: Ogni livello "nascosto" è composto da $N$ neuroni.
+    \item \textbf{output layer}: Questo livello è l'output del network, dipende dalla task (regressione/classificazione).
+\end{itemize}
+è stata utilizzata la libreria \emph{pytorch} per il forecasting.
+
+Rispetto ad \verb|ARIMA| uno dei benefici dell'utilizzo del deep learning è che non si fanno assunzioni sui dati soggiacenti, inoltre non c'è
+alcun bisogno che la serie sia stazionaria.
+
+Come configurazione di MLP, è stato impostato come training set i primi $72$ mesi, test set $30$ mesi e come set di verifica $10$ mesi.
