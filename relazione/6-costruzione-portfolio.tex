@@ -10,7 +10,7 @@ sulla performance di portfolio. In principio minore è la correlazione tra gli a
 
 \subsection{Costruzione del portfolio ottimale}
 
-\subsubsection{Costruzione tramite simulazione di Monte Carlo}
+\subsubsection{Costruzione tramite simulazioni di Monte Carlo}
 
 Utilizziamo il metodo Monte Carlo per ottenere un set di portafogli ottimali (nella frontiera di efficienza), cioè:
 \begin{itemize}
@@ -95,5 +95,45 @@ notevolmente inferiore rispetto al portafoglio precedente a figura \ref{fig:pf_o
 
 \subsection{Beta dei portafogli ottimali}
 
-L' indice beta per i due portafogli (dati passati e dati di previsione) è il seguente:
+L' indice beta per i due portafogli (dati passati e dati di previsione) è stato calcolato usando come per il punto 5 l'indice
+\verb|S&P 500| (\verb|^GSPC|).
+
+\subsubsection{beta del portfolio costituito solo con dati passati}
+
+Sono stati considerati tutti i dati passati con cadenza giornaliera e mediante il metodo della regressione è stato calcolato il beta (figura \ref{fig:pf_optima_pd_beta_graph}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\textwidth]{portfolio_beta_graph_pd.png}
+    \caption{retta di regressione per calcolo del beta usando dati passati.}
+    \label{fig:pf_optima_pd_beta_graph}
+\end{figure}
+
+L'indice beta calcolato è pari a \verb|0.9145|.
+
+\pagebreak
+
+\subsubsection{beta del portfolio costituito con dati di previsione}
+
+In questo caso come per le sezioni precedenti per i 108 mesi sono stati usati sia i dati passati che quelli di previsione,
+Rispetto al calcolo di beta effettuato qui sopra è stata considerata una frequenza mensile invece di giornaliera in quanto
+il forecasting ha prodotto dati mensili (figura \ref{fig:pf_optima_pr_beta_graph}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\textwidth]{portfolio_beta_graph_pr.png}
+    \caption{retta di regressione per calcolo del beta usando dati di previsione.}
+    \label{fig:pf_optima_pr_beta_graph}
+\end{figure}
+
+L'indice beta calcolato è pari a \verb|0.5996|.
+
+\subsection{Costruzione del portfolio effettivo e confronto}
+
+Per la costruzione del portfolio effettivo si può usare la tecnica di allocazione chiamata \textbf{1/n portfolio}, questa
+tecnica come da specifica del progetto alloca a tutti gli asset considerati peso uguale.\\
+Nonostante il fatto che sembra una tecnica molto semplicistica è stato 
+dimostrato  che può essere complicato superare la performance di un \verb|1\n portfolio| usando tecniche di asset allocation più complicate \cite{10.1093/rfs/hhm075}.
+
+Per effettuare tutti i benchmark e ottenere la valutazione del portfolio è stata utilizzata la libreria \emph{pyfolio}.
 
