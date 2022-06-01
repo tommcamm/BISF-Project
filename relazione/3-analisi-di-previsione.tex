@@ -130,7 +130,7 @@ Analizzando la tabella a figura \ref{fig:goog_arima_val} con il prezzo reale e q
 
 \pagebreak
 
-\subsection{Modello di previsione per Raytheon (rtx)}
+\subsection{Modello di previsione per Raytheon (RTX)}
 
 Per Raytheon, è stato identificato come valore dei parametri migliore \(p=1, d=1, q=1\) con un errore \verb|AIC| pari a \(1201.826\) (figura \ref{fig:rtx_arima_param}).
 
@@ -280,6 +280,6 @@ I Multilayer perceptrons sono una delle architetture base dei neural networks, s
 è stata utilizzata la libreria \emph{pytorch} per il forecasting.
 
 Rispetto ad \verb|ARIMA| uno dei benefici dell'utilizzo del deep learning è che non si fanno assunzioni sui dati soggiacenti, inoltre non c'è
-alcun bisogno che la serie sia stazionaria.
+alcun bisogno che la serie sia stazionaria. MLP è un modello di neural network feedforward, è piu semplice rispetto ad altre tipologie di modelli deep learning,
+per questo motivo è sempre raccomandato prima di utilizzare modelli più sofisticati.
 
-Come configurazione di MLP, è stato impostato come training set i primi $72$ mesi, test set $30$ mesi e come set di verifica $10$ mesi.
