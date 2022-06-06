@@ -12,11 +12,20 @@ di un portfolio ottimizzato utilizzando anche le predizioni effettuate precedent
 
 Relativamente alle analisi di previsione è stato reso noto come la alta volatilità dei titoli abbia influito sulla
 previsione con modello \verb|ARIMA|, il titolo \verb|GOOG| è stato l'esempio più noto dove nel periodo di verifica il
-prezzo reale si è discostato oltre l'intervallo di confidenza.
+prezzo reale si è discostato oltre l'intervallo di confidenza.\\
+Considerando la elevata volatilità dei titoli l'utilizzo di un algoritmo di deep learning avrebbe potuto ottenere dati di previsione più precisi,
+tuttavia dei test effettuati sul modello MLP hanno portato un livello di errore superiore a quello di naïve, segnalando la imprecisione del modello.
 
 Nelle strategie di trading è stato molto interessante osservare come indicatori tecnici, come le Bande di Bollinger possano
-essere impiegate in un algoritmo per segnalare automaticamente quando comprare o vendere un titolo, nel caso presentato nel capitolo
-4 per esempio, durante backtesting si è riuscito nel periodo del 2020 ad avere un profitto, tuttavia anche se non presentato ci sono
-stati periodi come quello del 2021 dove alla fine dell'anno il backtesting ha segnalato una perdita, ciò ha dimostrato che nonostante In
-alcuni casi l'algoritmo presentato funzioni, può comunque portare a una perdita del capitale investito.
+essere impiegate in un algoritmo per segnalare automaticamente quando effettuare l'acquisto o la vendita di un titolo, nel caso presentato nel capitolo
+4 per esempio, durante backtesting si è riuscito nel periodo del 2020 ad avere un profitto, tuttavia anche se non presentato nel capitolo ci sono
+stati periodi come nel 2021 dove alla fine dell'anno il backtesting ha segnalato una perdita sul capitale investito inizialmente, ciò ha dimostrato che nonostante in
+alcuni casi l'algoritmo presentato funzioni, può comunque portare a una perdita del capitale investito, e per questo motivo è necessario il backtesting per cercare di creare
+algoritmi che mediante diverse strategie limitino il rischio di perdita del capitale.
 
+Sui titoli considerati in questo progetto, nei capitoli 6 e 7 ne è stato calcolato il rischio utilizzando il \verb|CAPM| per valutare il rischio e successivamente sono stati costruiti due portafogli "ottimizzati"
+utilizzando le simulazioni di monte carlo, il primo utilizzava unicamente i dati storici mentre il secondo usava sia i dati storici che quelli ottenuti tramite forecasting nel punto 3,
+la costruzione dei due portafogli è stata utile per evidenziare la dispersione notevolmente inferiore quando sono stati utilizzati i dati di autoregressione provenienti da \verb|ARIMA|.\\
+Per confrontare i portafogli ottimizzati sono stati costituiti successivamente altri due portafogli dove ogni titolo aveva lo stesso peso, sfruttando il concetto del \textbf{1/n portfolio}, in questo
+caso con solo i dati passati è stato evidenziato un rendimento inferiore con una volatilità più alta, mentre con i dati di previsione il portfolio \verb|1/n| è riuscito ad avere una volatilità inferiore a discapito tuttavia
+del rendimento nettamente più basso.
