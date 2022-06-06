@@ -6,14 +6,17 @@
 Il backtesting ci permette di valutare la performance di una strategia di trading utilizzando
 indicatori euristici o tecnici e applicandoli a dati storici.
 
-Nel contesto di questo progetto, è stato creato un algoritmo di trading usando la tecnica BB
+Grazie al backtesting possiamo simulare la strategia di trading utilizzando dati storici e quindi generare risultati
+ed analizzare il rischio oltre ad il potenziale profitto prima di investire vero capitale.
+
+Nel contesto di questo progetto, è stato creato un algoritmo di trading usando le bande di bollinger per il signaling.
 
 \subsection{Strategia buy/sell mediante Bollinger's Bands}
 
 Le bande di Bollinger sono un metodo statistico per derivare informazioni sul prezzo e volatilità di un asset
 nel tempo.
 
-Per ottenere le bade di Bollinger abbiamo bisogno di calcolare la media mobile e la deviazione standard della serie
+Per ottenere le bande di Bollinger abbiamo bisogno di calcolare la media mobile e la deviazione standard della serie
 temporale, utilizzando una finestra specifica (tipicamente 20 giorni). Successivamente dobbiamo importare la banda
 superiore/inferiore a $K$ volte (tipicamente 2) la deviazione standard mobile sopra o sotto la media mobile.
 
@@ -31,6 +34,27 @@ Di seguito il codice per la impostazione dei signal:
     # Impostazione del sell signal
     self.sell_signal = bt.ind.CrossOver(self.datas[0],
                                         self.b_band.lines.top)
+\end{lstlisting}
+
+Se è presente già una posizione aperta non verranno aperte altre posizioni in caso di ulteriori cross-over, la posizione viene chiusa automaticamente
+appena viene generato un segnale di sell.
+
+L'algoritmo utilizzato non prevede short-selling, a causa di ciò per effettuare una operazione di sell deve essere presente una posizione aperta sul titolo, di seguito il codice che effettua l'ordine di acquisto o vendita:
+
+\begin{lstlisting}[showstringspaces=false, language=Python]
+    if not self.position:
+        if self.buy_signal > 0:
+            size = int(self.broker.getcash() / self.datas[0].open)
+            self.log(f'BUY CREATED --- Size: {size},    \
+                Cash: {self.broker.getcash():.2f},      \
+                Open: {self.data_open[0]},              \
+                Close: {self.data_close[0]}')
+            self.buy(size=size)
+    else:
+        if self.sell_signal < 0:
+            self.log(f'SELL CREATED --- Size: {self.position.size}')
+            self.sell(size=self.position.size)
+                 
 \end{lstlisting}
 
 \pagebreak
