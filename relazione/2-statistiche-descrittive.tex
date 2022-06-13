@@ -444,7 +444,56 @@ Per questo titolo abbiamo 3 outliers: due tra \verb|-0.1| e \verb|-0.2| e uno tr
 
 Per ogni serie di rendimenti sono state considerate le seguenti statistiche univariate: media, varianza, deviazione standard, asimmetria e curtosi.
 
-Tali statistiche univariate servono per [TODO]
+La \textbf{media} \(m\) è un indicatore statistico che può essere utilizzato per determinare la performance del prezzo di uno stock su un determinato periodo di tempo.
+
+\begin{displaymath}
+  m = \frac{p_1 + p_2 + \cdots + p_n}{n}
+\end{displaymath}
+
+La \textbf{varianza} \(\sigma^2\) invece misura la lontananza dei valori dal centro (media aritmetica) e per questo è un indicatore fondamentale per determinare la volatilità di un determinato titolo.
+
+\begin{displaymath}
+  \sigma^2 = \frac{\sum^n_{i=1}(x_i-\overline{x})^2}{n-1}
+\end{displaymath}
+
+\textbf{dove}\\
+\(x_i = \text{osservazione i-esima}\)\\
+\(\overline{x} = \text{media di tutte le osservazioni}\)\\
+\(n = \text{numero totale di tutte le osservazioni}\)
+
+La \textbf{Deviazione Standard} misura la dispersione del dataset dalla media ed è calcolato effettuando la radice quadrata della 
+varianza, in finanzia applicando la deviazione standard sul rendimento annuale di un investimento è possibile analizzare la sua volatilità storica.
+
+\begin{displaymath}
+  \sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum^n_{i=1}(x_i-\overline{x})^2}{n-1}}
+\end{displaymath}
+
+La \textbf{Asimmetria} o Skewness si riferisce alla deviazione dalla distribuzione normale di un set di dati, un set si dice "Skewed" o asimmetrico se la curva è
+spostata verso destra o sinistra, possiamo quantificare in un numero quanto la distribuzione data varia dalla distribuzione normale (la dist. normale ha asimmetria pari a zero).\\
+
+\begin{displaymath}
+  Sk_1 = \frac{\overline{X} - Mo}{s}
+\end{displaymath}
+
+\textbf{dove}\\
+\(Sk_1 = \text{primo coefficiente di Pearson per asimmetria}\)\\
+\(s = \text{deviazione standard dei dati}\)\\
+\(\overline{X} = valore della Media\)\\
+\(Mo = \text{valore della moda dei dati}\)
+
+In fine la \textbf{Curtosi} insieme alla asimmetria è usata per descrivere le distribuzioni, rispetto alla asimmetria misura i valori in entrambe le "code" della distribuzione.
+In finanza valori alti di Curtosi nella distribuzione dei rendimenti implica che occasionalmente potranno capitare dei rendimenti estremi (sia positivi che negativi).
+
+\begin{displaymath}
+  Kurt = \frac{\sum(x_i - \overline{x})^4}{n \cdot s^4} = \frac{\mu_4}{\sigma^4}
+\end{displaymath}
+
+\textbf{dove}\\
+\(\overline{X} = \text{valore della Media}\)\\
+\(s = \text{deviazione standard delle osservazioni}\)\\
+\(n = \text{numero totale di tutte le osservazioni}\)
+
+\pagebreak
 
 \textbf{Statistiche per Meta (FB)}
 
