@@ -1,6 +1,6 @@
-# Business Intelligence final project
+# Business Intelligence Exam project
 
-Project for the exam of Business Intelligence For Financial Services
+Project for the exam of Business Intelligence For Financial Services about financial data anlysis. (All of the documentation is written in Italian)
 
 ## Considered STOCKS
 
@@ -10,6 +10,11 @@ Project for the exam of Business Intelligence For Financial Services
 - **LMT**   | lockheed martin
 - **BAC**   | Bank of america
 - **JPM**   | JP Morgan & Chase.
+
+## Used technologies
+
+- Python with Jupyter Notebook as programming language
+- LaTeX for documentation
 
 ## About the data
 
