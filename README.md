@@ -1,6 +1,6 @@
 # Business Intelligence Exam project
 
-Project for the exam of Business Intelligence For Financial Services about financial data anlysis. (All of the documentation is written in Italian)
+Project for the exam of Business Intelligence For Financial Services about financial data analysis. (All of the documentation is written in Italian)
 
 ## Considered STOCKS
 
